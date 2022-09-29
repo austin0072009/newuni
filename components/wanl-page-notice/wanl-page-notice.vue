@@ -1,7 +1,7 @@
 <template>
-	<view class="wanlpage-notice" :style="[pageData.style]">
+	<view class="wanlpage-notice" :style="[pageData.style]" v-if="pageData.params.show">
 		<view @tap="$wanlshop.on(pageData.data[0].link)">
-			<text class="wlIcon wlIcon-notice margin-right-xs" v-if="pageData.params.show"></text>
+			<image src="../../static/images/announcement.png" style="width: 56rpx;height: 56rpx;"></image>
 			<text>{{pageData.data[0].content}}</text>
 		</view>
 	</view>
@@ -26,4 +26,13 @@
 	}
 </script>
 <style>
+	.wanlpage-notice {
+		width: 100%;
+		height: 48px;
+		background: #fff;
+		border-radius: 9px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 </style>

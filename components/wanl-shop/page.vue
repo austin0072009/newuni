@@ -39,7 +39,7 @@
 		<!-- 自定义首页 -->
 		<view v-if="pageModules" :style="{
 				paddingTop: headHeight + 'px'
-			}" style="background-size: 100% auto;">
+			}" style="background-size: 100% auto;padding-left: 12px;padding-right: 12px;">
 			<view v-for="(item, index) in pageModules.item" :key="index">
 				<wanl-page-banner v-if="item.type == 'banner'" :pageData="item" />
 				<wanl-page-image v-if="item.type == 'image'" :pageData="item" />

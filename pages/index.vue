@@ -28,11 +28,11 @@
 					<view class="flex t-right">
 						<view class="margin-right-bj text-xxl position-relative" style="flex-direction: row;align-items: center;" @click="langBtn()">
 							<image :src="langImg" mode="widthFix" style="display: block;width: 19px;height: 19px;margin: 0 auto;"></image>
-							<view style="text-align: center;font-size: 11px;color: #fff;">{{ langText }}</view>
+							<view style="text-align: center;font-size: 10px;color: #fff;">{{ langText }}</view>
 						</view>
 						<view class="text-xxl" @tap="$wanlshop.to('/pages/notice/notice')">
 							<image src="../static/images/find/info.png" mode="widthFix" style="display: block;width: 19px;height: 19px;margin: 0 auto;"></image>
-							<view style="text-align: center;font-size: 11px;color: #fff;">{{ $t('index.info') }}</view>
+							<view style="text-align: center;font-size: 10px;color: #fff;">{{ $t('index.info') }}</view>
 						</view>
 					</view>
 				</view>
@@ -234,7 +234,7 @@ export default {
 	},
 	data() {
 		return {
-			headHeight: 55,
+			headHeight: 50,
 			windowHeight: 0,
 			headTop: 0,
 			currentItemId: 'home',
@@ -261,7 +261,7 @@ export default {
 		let sys = this.$wanlshop.wanlsys();
 		this.headTop = sys.top;
 		// this.headHeight = sys.height + uni.upx2px(60);
-		this.headHeight = 55;
+		this.headHeight = 50;
 		this.windowHeight = sys.windowHeight;
 		setTimeout(() => {
 			uni.setNavigationBarColor({

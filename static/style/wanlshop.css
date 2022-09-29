@@ -2782,3 +2782,11 @@ image{will-change: transform}
 		transform: translateX(0)
 	}
 }
+
+.uni-video-video{
+	width: fit-content;
+	height: 100%;
+	object-position: inherit;
+	padding-left: 80px;
+	padding-right: 80px;
+}

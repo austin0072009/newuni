@@ -1,6 +1,9 @@
 <template>
 	<!-- ok -->
-	<view class="wanlpage-advert-banner" :style="[pageData.style]">
+	<view class="wanlpage-advert-banner" style="    color: rgb(0, 0, 0);
+    margin: 25px 0px 12px;
+    border-radius: 11px;
+    overflow: hidden;">
 		<swiper class="screen-swiper square-dot" :style="{height: pageData.params.height}" :indicator-dots="true" :circular="true" :autoplay="true" :interval="pageData.params.interval" duration="500">
 			<swiper-item v-for="(item, index) in advertData" :key="item.id" v-if="item.module == 'page' && item.type == 'banner'" @tap="onAdvert(item)">
 				<image :style="{borderRadius: radius}" :src="$wanlshop.oss(item.media, 414, 0, 1, 'transparent', 'png')" mode="aspectFill" style="height: 116px;"></image>

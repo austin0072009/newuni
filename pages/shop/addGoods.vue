@@ -116,10 +116,10 @@
 			
 		},
 		onShow(){
-			this.category = this.common.modulesData.categoryModules;
-			this.newCategotyDeptList[0] = this.category;
-			this.newCategotyDeptList[1] = this.category[0].childlist;
-			this.getShopCate();
+			// this.category = this.common.modulesData.categoryModules;
+			// this.newCategotyDeptList[0] = this.category;
+			// this.newCategotyDeptList[1] = this.category[0].childlist;
+			// this.getShopCate();
 		},
 		methods: {
 			showCate(){

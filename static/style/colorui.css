@@ -1521,7 +1521,7 @@ button.wlIcon.lg {
 }
 
 .cu-bar .content {
-	position: absolute;
+	/* position: absolute; */
 	text-align: center;
 	width: calc(100% - 340rpx);
 	left: 0;

@@ -12,13 +12,13 @@
 					color: common.appStyle.cart_font_color == 'light' ? '#ffffff' : '#333333'
 				}"
 			>
-				<view class="action" @tap="operate()">
-					<text v-if="cart.operate">{{$t('cart.complete')}}</text>
-					<text v-else>{{$t('cart.management')}}</text>
-				</view>
 				<view class="content" :style="{ top: $wanlshop.wanlsys().top + 'px' }">
-					{{$t('cart.cart')}}
-					<text class="text-sm">（{{$t('cart.total')}}{{ cart.cartnum }}{{$t('cart.piece_baby')}}）</text>
+					购物车
+				</view>
+				<view class="action" @tap="operate()">
+					<text v-if="cart.operate">完成</text>
+					<text v-else>管理</text>
+					<image src="../static/images/edit.png" style="width: 19px;height: 19px;margin-left: 9px;"></image>
 				</view>
 			</view>
 		</view>
@@ -195,11 +195,11 @@ export default {
 			})
 			uni.setTabBarItem({
 			    index: 2,
-			    text: this.$t('index.shop')
+			    text: this.$t('index.cart')
 			})
 			uni.setTabBarItem({
 			    index: 3,
-			    text: this.$t('index.cart')
+			    text: this.$t('index.shop')
 			})
 			uni.setTabBarItem({
 			    index: 4,

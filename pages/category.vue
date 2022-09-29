@@ -9,10 +9,10 @@
 					paddingTop: $wanlshop.wanlsys().top + 'px'
 				}"
 			>
-				<view class="action" @tap="handleGroups">
+				<!-- <view class="action" @tap="handleGroups">
 					<text class="wlIcon-pintuan3"></text>
-					<!-- <view class="cu-tag badge">拼</view> -->
-				</view>
+					<view class="cu-tag badge">拼</view>
+				</view> -->
 				<view class="search-form round">
 					<text class="wlIcon-sousuo1 text-bold"></text>
 					<swiper
@@ -33,9 +33,9 @@
 					</swiper>
 				</view>
 				<!-- #ifndef MP -->
-				<view class="action" @tap="showModal('menu')">
+				<!-- <view class="action" @tap="showModal('menu')">
 					<text class="wlIcon-gengduo"></text>
-					<!-- {{( statistics.notice.notice + statistics.notice.order + statistics.notice.chat + statistics.order.pay + statistics.order.delive + statistics.order.receiving + statistics.order.evaluate + cart.cartnum )}} -->
+					{{( statistics.notice.notice + statistics.notice.order + statistics.notice.chat + statistics.order.pay + statistics.order.delive + statistics.order.receiving + statistics.order.evaluate + cart.cartnum )}}
 					<view
 						class="cu-tag badge bg-orange"
 						v-if="
@@ -50,7 +50,7 @@
 								0
 						"
 					></view>
-				</view>
+				</view> -->
 				<!-- #endif -->
 			</view>
 		</view>

@@ -33,11 +33,14 @@
 				<block v-for="(item,index) in categoryData" :key="item.id">
 					<scroll-view scroll-y class="right" :style="{ height: `${mainHeight}px` }" v-if="currentTab == index">
 						<view class="list-cat">
-							<swiper class="screen-swiper square-dot" indicator-dots circular autoplay interval="4000" duration="500" v-if="adverData && adverData[item.id]">
+							<!-- <swiper class="screen-swiper square-dot" indicator-dots circular autoplay interval="4000" duration="500" v-if="adverData && adverData[item.id]">
 								<swiper-item v-for="(adverts, adindex) in adverData[item.id]" :key="adindex" @tap="onAdvert(adverts)">
 									<image lazy-load class="radius-bock" :src="$wanlshop.oss(adverts.media, 350, 0, 1)" mode="aspectFill"></image>
 								</swiper-item>
-							</swiper>
+							</swiper> -->
+							<view class="active-category-title">
+								<text>{{ item.name }}</text>
+							</view>
 							<view class="padding-top-sm">
 								<view class="list-item radius-bock">
 									<view class="list-container">
@@ -222,13 +225,15 @@
 			.left {
 				width: 200rpx;
 				z-index: 10;
-				background: #fbfbfb;
+				background: #fdfdfd;
 
 				.item {
 					width: 200rpx;
 					height: 110rpx;
+					line-height: 110rpx;
 					box-sizing: border-box;
-					display: flex;
+					display: inline-block;
+					text-align: center;
 					align-items: center;
 					justify-content: center;
 					font-size: 26rpx;
@@ -237,34 +242,26 @@
 
 					&.active {
 						position: relative;
-						color: #000;
-						font-size: 30rpx;
-						font-weight: 600;
-						background: white;
-
-						&::before {
-							content: '';
-							position: absolute;
-							border-left: 6rpx solid #fe6600;
-							height: 32rpx;
-							left: 0;
-						}
+						color: #fe6600;
 					}
 				}
 			}
 
 			.right {
 				width: 100%;
-				padding-left: 25rpx;
 				box-sizing: border-box;
+				background: #ffffff;
 
 				/* background-image: linear-gradient(#fff, #f2f2f2, #f4f4f4, #f6f6f6); */
 				.list-cat {
 					width: 100%;
 					overflow: hidden;
 					padding-top: 10rpx;
-					padding-right: 20rpx;
 					box-sizing: border-box;
+					.active-category-title {
+						font-weight: 700;
+						padding: 10px;
+					}
 				}
 
 				.screen-swiper {
@@ -301,8 +298,8 @@
 				}
 
 				.list-image {
-					width: 120rpx;
-					height: 120rpx;
+					width: 100rpx;
+					height: 100rpx;
 				}
 			}
 		}

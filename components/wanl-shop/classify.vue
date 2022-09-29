@@ -226,7 +226,7 @@
 
 				.item {
 					width: 200rpx;
-					height: 110rpx;
+					height: 40px;
 					box-sizing: border-box;
 					display: flex;
 					align-items: center;

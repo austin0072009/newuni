@@ -172,7 +172,8 @@ export default {
 		mch_level: '商户升级',
 		mch_good: '商品管理',
 		mch_order: '订单管理',
-		mch_ghs: '成为供货商'
+		mch_ghs: '成为供货商',
+		mch_reply: '申请成功，请耐心等待',
 	},
 	//收藏
 	collect: {

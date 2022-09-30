@@ -167,7 +167,8 @@ export default {
 		mch_level: 'Upgrade',
 		mch_good: 'Commodity',
 		mch_order: 'Order',
-		mch_ghs: 'Supplier'
+		mch_ghs: 'Supplier',
+		mch_reply: 'Apply success, pleas wait for review',
 	},
 	collect: {
 		goods_commodity: 'Goods',

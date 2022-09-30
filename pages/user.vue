@@ -366,7 +366,8 @@ export default {
 			this.$api.get({
 				url: '/wanlshop/shop/ghsApply',
 				success: res => {
-					this.$wanlshop.msg('申请成功，请耐心等待');
+					this.$wanlshop.msg($t('user.mch_reply'));
+					// apply success! please wait for review
 				}
 			});
 		},

@@ -239,7 +239,7 @@
 					font-size: 26rpx;
 					color: #444;
 					font-weight: 400;
-
+					
 					&.active {
 						position: relative;
 						color: #fe6600;

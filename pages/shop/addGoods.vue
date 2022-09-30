@@ -170,8 +170,8 @@
 			async wanlChecker(e){
 				var data = this.data;
 				data.category_id = this.category[this.multDeptIndex[0]].childlist[this.multDeptIndex[1]].id;
-				data.shop_category_id = this.shop_cate[this.shop_cate_value].id;
-				if(data.description == ''){
+				 data.shop_category_id = this.shop_cate[this.shop_cate_value].id;
+				 if(data.description == ''){
 					this.$wanlshop.msg(this.$t('other.msg2'));
 					return;
 				}

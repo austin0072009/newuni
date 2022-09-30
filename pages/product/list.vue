@@ -24,7 +24,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="head" :class="{ headtop: scrollStype }">
+		<!-- <view class="head" :class="{ headtop: scrollStype }">
 			<view class="cue">
 				<view class="bar">
 					<view class="item" :class="{ current: filterIndex === 0 }" @tap="tabClick(0)">{{$t('product.msg1')}}</view>
@@ -43,7 +43,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		<!-- 主体 -->
 		<block v-if="goodsData.length > 0">
 			<wanl-product :dataList="goodsData" :dataStyle="liststyle" :dataType="goodsType"/>

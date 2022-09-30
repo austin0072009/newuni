@@ -30,20 +30,21 @@
 									<text class="margin-left-xs">{{ item.title }}</text>
 								</view>
 								<view class="goods-tag">
-									<view class="cu-tag radius sm line-red" v-if="item.shop.isself == 1">{{$t('index.official_purchase_at_ease')}}</view>
+									<!-- <view class="cu-tag radius sm line-red" v-if="item.shop.isself == 1">{{$t('index.official_purchase_at_ease')}}</view>
 									<view class="cu-tag radius sm line-gray" v-if="item.isLive"
-										@tap="onLive(item.isLive)">LIVE</view>
+										@tap="onLive(item.isLive)">LIVE</view> -->
 								</view>
 								<view class="flex align-center justify-between">
 									<view class="text-red text-bold text-lg">
 										<text class="text-price">{{ item.price }}</text>
 									</view>
-									<view class="text-sm wanl-gray" v-if="dataType === 'groups'">
+									<view class="label_mode">{{$t('index.look')}}</view>
+									<!-- <view class="text-sm wanl-gray" v-if="dataType === 'groups'">
 										<text>{{$t('index.have_you_spell_group')}} {{$wanlshop.toFormat(item.groups_num, 'hundred')}} {{$t('index.a')}}</text>
 									</view>
 									<view class="text-sm wanl-gray" v-else>
 										<text>{{$wanlshop.toFormat(item.comment, 'hundred')}} {{$t('index.evaluation')}}</text>
-									</view>
+									</view> -->
 								</view>
 							</view>
 						</view>
@@ -70,20 +71,20 @@
 									<text>{{ item.title }}</text>
 								</view>
 								<view class="goods-tag">
-									<view class="cu-tag radius sm line-red" v-if="item.shop.isself == 1">{{$t('index.official_purchase_at_ease')}}</view>
+									<!-- <view class="cu-tag radius sm line-red" v-if="item.shop.isself == 1">{{$t('index.official_purchase_at_ease')}}</view>
 									<view class="cu-tag radius sm line-gray" v-if="item.isLive"
-										@tap="onLive(item.isLive)">LIVE</view>
+										@tap="onLive(item.isLive)">LIVE</view> -->
 								</view>
 								<view class="flex align-center justify-between">
 									<view class="text-red text-bold text-lg">
 										<text class="text-price">{{ item.price }}</text>
 									</view>
-									<view class="text-sm wanl-gray" v-if="dataType === 'groups'">
+									<!-- <view class="text-sm wanl-gray" v-if="dataType === 'groups'">
 										<text>{{$t('index.have_you_spell_group')}} {{$wanlshop.toFormat(item.groups_num, 'hundred')}} {{$t('index.a')}}</text>
 									</view>
 									<view class="text-sm wanl-gray" v-else>
 										<text>{{$wanlshop.toFormat(item.comment, 'hundred')}} {{$t('index.evaluation')}}</text>
-									</view>
+									</view> -->
 								</view>
 							</view>
 						</view>

@@ -51,6 +51,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('setting.btn2')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 		},
 		computed: {
 			...mapState(['user'])

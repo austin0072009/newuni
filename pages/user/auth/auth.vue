@@ -32,9 +32,9 @@
 								 maxlength=12 
 								 class="iptPasswd"
 								/> -->
-								<view @tap="showPwd">
+								<!-- <view @tap="showPwd">
 									  show
-								    </view>
+								    </view> -->
 						</view>
 						<view class="auth-button flex flex-direction">
 							<button form-type="submit" class="cu-btn sl radius-bock bg-orange" :disabled="submitDisabled">{{$t('login.msg3')}}</button>

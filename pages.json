@@ -163,6 +163,18 @@
 							}
 						}
 					}
+				},
+				{
+					"path": "help",
+					"style": {
+						"navigationBarTitleText": "帮助"
+					}
+				},
+				{
+					"path": "about",
+					"style": {
+						"navigationBarTitleText": "About"
+					}
 				}
 			]
 		},

@@ -72,6 +72,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('help.title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			this.loadData();
 		},
 		onPullDownRefresh() {

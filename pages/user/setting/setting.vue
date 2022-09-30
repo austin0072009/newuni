@@ -92,6 +92,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('setting.title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			// #ifdef APP-PLUS
 			this.formatSize();
 			// #endif

@@ -2,7 +2,7 @@
 	<view>
 		<!-- 导航条 -->
 		<view class="cu-custom">
-			<view class="cu-bar bg-bgcolor fixed" :style="{ height: $wanlshop.wanlsys().height + 'px', paddingTop: $wanlshop.wanlsys().top + 'px'}">
+			<view class="cu-bar fixed" :style="{ height: $wanlshop.wanlsys().height + 'px', paddingTop: $wanlshop.wanlsys().top + 'px'}">
 				<view class="action" @tap="$wanlshop.back(1)">
 					<text class="wlIcon-fanhui1"></text>
 				</view>
@@ -248,6 +248,10 @@
 </script>
 
 <style>
+	.cu-bar {
+		background-color: rgb(250, 67, 106);
+		color: #fff;
+	}
 	.cu-btn[disabled] {
 	    opacity: 1;
 	    color: #ffffff;

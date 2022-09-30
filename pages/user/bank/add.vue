@@ -69,6 +69,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('bank.add_title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 		},
 		methods: {
 			// 后续版本添加第三方API接口，自动获取银行，验证银行卡三要素

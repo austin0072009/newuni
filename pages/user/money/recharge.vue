@@ -53,6 +53,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('money.recharge_title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			// 支付列表
 			let method = 'wap';
 			// #ifdef APP-PLUS

@@ -167,6 +167,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('groups.title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			if (!options.state) {
 				options.state = 0;
 			}

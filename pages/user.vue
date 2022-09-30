@@ -75,7 +75,11 @@
 			<view class="operate">
 				<view class="text-sm" @tap="$wanlshop.auth('/pages/user/collect')">
 					<text class="text-bold">{{ statistics.dynamic.collection }}</text>
-					{{$t('user.favorites')}}
+					{{$t('user.collection')}}
+				</view>
+				<view class="text-sm" @tap="$wanlshop.auth('/pages/user/coupon/mycard')">
+					<text class="text-bold">{{ statistics.dynamic.concern }}</text>
+					{{$t('user.my_card')}}
 				</view>
 				<view class="text-sm" @tap="$wanlshop.auth('/pages/user/follow')">
 					<text class="text-bold">{{ statistics.dynamic.concern }}</text>
@@ -85,13 +89,13 @@
 					<text class="text-bold">{{ statistics.dynamic.footprint }}</text>
 					{{$t('user.footprint')}}
 				</view>
-				<view class="text-sm" @tap="$wanlshop.auth('/pages/user/order/order')">
+				<!-- <view class="text-sm" @tap="$wanlshop.auth('/pages/user/order/order')">
 					<text class="text-bold">{{ $wanlshop.toFormat(statistics.order.whole, 'hundred') }}</text>
 					{{$t('user.all_order')}}
-				</view>
+				</view> -->
 				
 			</view>
-			<view class="activity padding-bj">
+			<!-- <view class="activity padding-bj">
 				<view class="bg-white radius grid text-center col-2 padding-lr-bj padding-tb-sm">
 					<view class="solid-right flex justify-between" @tap="$wanlshop.auth('/pages/user/coupon/list')">
 						<view class="content">
@@ -114,35 +118,48 @@
 						<view class="cu-avatar" :style="{ backgroundImage: 'url(' + $wanlshop.appstc('/user/icon_super_vip.png') + ')' }"></view>
 					</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 		
 		<view class="wanl-user-order padding-sm margin-bj">
+			<view class="uni-list">
+				<view class="uni-list-item">
+					<view class="uni-list-item__container uni-list-item--first">
+						<view class="uni-list-item__content">
+							<text class="uni-list-item__content-title">{{$t('user.my_order')}}</text>
+						</view>
+						<view class="uni-list-item__extra-text" @tap="$wanlshop.auth('/pages/user/order/order?state=0')">
+							<span>{{$t('user.all_order')}} </span>
+						</view>
+						<text class="wlIcon-fanhui2" style="color: rgb(187, 187, 187);font-size: 15px;"></text>
+					</view>
+				</view>	
+			</view>
 			<view class="project text-sm wanl-gray-dark">
 				<view @tap="$wanlshop.auth('/pages/user/order/order?state=1')">
-					<text class="wlIcon-31daifukuan wanl-pip"></text>
+					<text class="wlIcon-hongbao wanl-red"></text>
 					{{$t('user.pending_payment')}}
-					<view class="cu-tag badge bg-orange" v-if="statistics.order.pay > 0">{{ $wanlshop.toFormat(statistics.order.pay, 'hundred') }}</view>
+					<view class="cu-tag badge bg-red" v-if="statistics.order.pay > 0">{{ $wanlshop.toFormat(statistics.order.pay, 'hundred') }}</view>
 				</view>
 				<view @tap="$wanlshop.auth('/pages/user/order/order?state=2')">
-					<text class="wlIcon-31daifahuo wanl-pip"></text>
+					<text class="wlIcon-31daifahuo wanl-red"></text>
 					{{$t('user.to_be_shipped')}}
-					<view class="cu-tag badge bg-orange" v-if="statistics.order.delive > 0">{{ $wanlshop.toFormat(statistics.order.delive, 'hundred') }}</view>
+					<view class="cu-tag badge bg-red" v-if="statistics.order.delive > 0">{{ $wanlshop.toFormat(statistics.order.delive, 'hundred') }}</view>
 				</view>
 				<view @tap="$wanlshop.auth('/pages/user/order/order?state=3')">
-					<text class="wlIcon-31daishouhuo wanl-pip"></text>
+					<text class="wlIcon-dianpu wanl-red"></text>
 					{{$t('user.pending_receipt')}}
-					<view class="cu-tag badge bg-orange" v-if="statistics.order.receiving > 0">{{ $wanlshop.toFormat(statistics.order.receiving, 'hundred') }}</view>
+					<view class="cu-tag badge bg-red" v-if="statistics.order.receiving > 0">{{ $wanlshop.toFormat(statistics.order.receiving, 'hundred') }}</view>
 				</view>
 				<view @tap="$wanlshop.auth('/pages/user/order/order?state=4')">
-					<text class="wlIcon-31daipingjia wanl-pip"></text>
+					<text class="wlIcon-leimu wanl-red"></text>
 					{{$t('user.to_be_commented')}}
-					<view class="cu-tag badge bg-orange" v-if="statistics.order.evaluate > 0">{{ $wanlshop.toFormat(statistics.order.evaluate, 'hundred') }}</view>
+					<view class="cu-tag badge bg-red" v-if="statistics.order.evaluate > 0">{{ $wanlshop.toFormat(statistics.order.evaluate, 'hundred') }}</view>
 				</view>
-				<view class="solid-left" @tap="$wanlshop.auth('/pages/user/refund/lists')">
-					<text class="wlIcon-31youhuiquan wanl-orange"></text>
+				<view @tap="$wanlshop.auth('/pages/user/refund/lists')">
+					<text class="wlIcon-tuikuan wanl-red"></text>
 					{{$t('user.return')}}
-					<view class="cu-tag badge bg-orange" v-if="statistics.order.customer > 0">{{ $wanlshop.toFormat(statistics.order.customer, 'hundred') }}</view>
+					<view class="cu-tag badge bg-red" v-if="statistics.order.customer > 0">{{ $wanlshop.toFormat(statistics.order.customer, 'hundred') }}</view>
 				</view>
 			</view>
 			<!-- <view class="logistics margin-top-bj padding-sm" v-if="statistics.logistics.length > 0">
@@ -168,16 +185,29 @@
 		</view>
 		
 		<view class="wanl-user-order padding-sm margin-bj" style="margin-top: 25rpx;">
+			<view class="uni-list">
+				<view class="uni-list-item">
+					<view class="uni-list-item__container uni-list-item--first">
+						<view class="uni-list-item__content">
+							<text class="uni-list-item__content-title">{{$t('user.wallet')}}</text>
+						</view>
+						<view class="uni-list-item__extra-text" @tap="$wanlshop.auth('/pages/user/money/money')">
+							<span>{{$t('user.enter_wallet')}} </span>
+						</view>
+						<text class="wlIcon-fanhui2" style="color: rgb(187, 187, 187);font-size: 15px;"></text>
+					</view>
+				</view>	
+			</view>
 			<view class="project text-sm wanl-gray-dark">
-				<view style="line-height: 1.8;" @tap="$wanlshop.auth('/pages/user/coupon/mycard')">
-					<view class="wanl-pip text-lg text-bold6">{{ statistics.dynamic.coupon }}</view>
-					{{$t('user.my_card')}}
-				</view>
 				<view style="line-height: 1.8;" @tap="$wanlshop.auth('/pages/user/money/money')">
 					<view class="wanl-pip text-lg text-bold6">{{ user.money?user.money:'0.00' }}</view>
 					{{$t('user.balance')}}
 				</view>
-				<view style="line-height: 1.8;" @tap="$wanlshop.auth('/pages/user/bank/bank')">
+				<view style="line-height: 1.8;" @tap="$wanlshop.auth('/pages/user/coupon/mycard')">
+					<view class="wanl-pip text-lg text-bold6">{{ statistics.dynamic.coupon }}</view>
+					{{$t('user.my_card')}}
+				</view>
+				<!-- <view style="line-height: 1.8;" @tap="$wanlshop.auth('/pages/user/bank/bank')">
 					<view class="wanl-pip text-lg text-bold6">{{ statistics.dynamic.accountbank }}</view>
 					{{$t('user.bank_card')}}
 				</view>
@@ -185,10 +215,10 @@
 					<view class="wanl-pip text-lg text-bold6">{{ user.score?user.score:0 }}</view>
 					{{$t('user.points')}}
 				</view>
-				<view class="solid-left" @tap="$wanlshop.auth('/pages/user/money/list')">
+				<view @tap="$wanlshop.auth('/pages/user/money/list')">
 					<text class="wlIcon-hongbao wanl-orange"></text>
 					{{$t('user.billing_details')}}
-				</view>
+				</view> -->
 			</view>
 		</view>
 		
@@ -378,7 +408,7 @@ export default {
 		langType(){
 			uni.setTabBarItem({
 			    index: 0,
-			    text: this.$t('index.tahanan')
+			    text: this.$t('index.home')
 			})
 			uni.setTabBarItem({
 			    index: 1,
@@ -446,6 +476,8 @@ export default {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	position: relative;
+	padding: 0px 14px 0;
+	position: relative;
 }
 
 .wanl-user .user {
@@ -488,6 +520,10 @@ export default {
 	line-height: 1.3;
 }
 
+.wanl-user .operate .text-sm {
+	width: 25%;
+}
+
 .wanl-user .operate text {
 	display: block;
 	font-size: 32rpx;
@@ -522,6 +558,52 @@ export default {
 	margin-top: 80rpx;
 	border-radius: 24rpx;
 	background-color: white;
+}
+
+.wanl-user-order .uni-list {
+	display: flex;
+	background-color: #fff;
+	position: relative;
+	flex-direction: column;
+}
+
+.wanl-user-order .uni-list-item {
+	font-size: 15px;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-left: 14px;
+}
+
+.uni-list-item__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 11px 14px;
+    padding-left: 0;
+    flex: 1;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uni-list-item__content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    flex-direction: column;
+    color: #3b4144;
+}
+
+.uni-list-item__content-title {
+    font-size: 13px;
+    color: #3b4144;
+    overflow: hidden;
+}
+
+.uni-list-item__extra-text {
+    color: #999;
+    font-size: 11px;
 }
 
 .wanl-user-order .title {

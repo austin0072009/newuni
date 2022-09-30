@@ -31,6 +31,14 @@ export default {
 		uni.setNavigationBarTitle({
 			title:this.$t('bank.title')
 		})
+		uni.setNavigationBarColor({
+		    frontColor: '#ffffff',
+		    backgroundColor: 'rgb(250, 67, 106)',
+		    animation: {
+		        duration: 400,
+		        timingFunc: 'easeIn'
+		    }
+		})
 		this.choice = option.choice;
 		this.loadData();
 	},

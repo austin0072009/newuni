@@ -45,6 +45,7 @@
 				<wanl-page-image v-if="item.type == 'image'" :pageData="item" />
 				<wanl-page-advert-banner v-if="item.type == 'advertBanner'" :pageData="item" :advertData="adData.pageAdverts" />
 				<wanl-page-advert-image v-if="item.type == 'advertImage'" :pageData="item" :advertData="adData.pageAdverts" />
+				<wanl-page-list v-if="item.type == 'advertBanner'" :pageData="item"/>
 				<wanl-page-video v-if="item.type == 'video'" :pageData="item" />
 				<wanl-page-menu v-if="item.type == 'menu'" :pageData="item" />
 				<wanl-page-notice v-if="item.type == 'notice'" :pageData="item" />

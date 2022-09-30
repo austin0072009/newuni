@@ -124,7 +124,7 @@ export default {
 		langType(){
 			uni.setTabBarItem({
 			    index: 0,
-			    text: this.$t('index.tahanan')
+			    text: this.$t('index.home')
 			})
 			uni.setTabBarItem({
 			    index: 1,

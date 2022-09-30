@@ -223,7 +223,15 @@ export default {
 	},
 	onLoad(option) {
 		uni.setNavigationBarTitle({
-			title:this.$t('service.title')
+			title:this.$t('index.help')
+		})
+		uni.setNavigationBarColor({
+		    frontColor: '#ffffff',
+		    backgroundColor: 'rgb(250, 67, 106)',
+		    animation: {
+		        duration: 400,
+		        timingFunc: 'easeIn'
+		    }
 		})
 		this.loadData();
 		//语音自然播放结束

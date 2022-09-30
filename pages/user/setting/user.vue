@@ -68,6 +68,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('setting.user_title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			//中央总线重新赋值Data
 			this.gender = this.$store.state.user.gender == 0 ? true : false;
 			this.genderdata = this.$store.state.user.gender;

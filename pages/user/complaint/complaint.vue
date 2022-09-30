@@ -75,6 +75,14 @@
 			uni.setNavigationBarTitle({
 				title:this.$t('complaint.item_title')
 			})
+			uni.setNavigationBarColor({
+			    frontColor: '#ffffff',
+			    backgroundColor: 'rgb(250, 67, 106)',
+			    animation: {
+			        duration: 400,
+			        timingFunc: 'easeIn'
+			    }
+			})
 			this.complaint.type = option.type;
 			this.complaintId = option.id;
 			if(option.type == 0){

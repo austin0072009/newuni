@@ -1,30 +1,50 @@
 <template>
 	<view>
 		<view class="auth">
-			<view class="wanl-title">{{$t('login.msg34')}}</view>
-			<form @submit="formSubmit">
-				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input 
-						:placeholder="$t('login.msg31')" 
-						type="number" maxlength="11" 
-						confirm-type="next" 
-						placeholder-class="placeholder" 
-						name="mobile"
-						v-model="mobile"
-						@input="onKeyInput"
-					></input>
+			<view class="logo-section">
+				<image src="../../../static/images/logo2.png"></image>
+				<view class="wanl-login">{{$t('login.msg')}}</view>
+			</view>
+			<view class="form">
+				<view class="item">
+					<form @submit="formSubmit">
+						<view class="u-tabs__wrapper__nav">
+							<view class="scroll__item" :class="{'active' : phone}" @tap="changeEmail">{{ $t('login.phone') }}</view>
+							<view class="scroll__item" :class="{'active' : !phone}" @tap="changeEmail">{{ $t('login.email') }}</view>
+						</view>
+						
+						<view class="input" v-if="phone">
+							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
+							 confirm-type="next" @input="onKeyInput" v-model="mobile"></input>
+						</view>
+						<view class="input" v-else>
+							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="16" confirm-type="next" @input="onKeyInput"></input>
+						</view>
+						
+						<!-- <view class="auth-group radius-bock bg-gray wlian-grey-light">
+							<input 
+								:placeholder="$t('login.msg31')" 
+								type="number" maxlength="11" 
+								confirm-type="next" 
+								placeholder-class="placeholder" 
+								name="mobile"
+								v-model="mobile"
+								@input="onKeyInput"
+							></input>
+						</view> -->
+						<view class="auth-button flex flex-direction">
+							<button class="cu-btn bg-orange sl radius-bock" formType="submit" :disabled="submitDisabled">{{$t('login.msg32')}}</button>
+						</view>
+						<!-- 同意服务条款 -->
+						<checkbox-group :class="checked == 1 ? 'shake-horizontal' : ''" class="auth-clause" @change="CheckboxChange">
+							<checkbox class="orange" :class="checked == 2 ? 'checked' : ''" :checked="checked == 2 ? true : false" value="2" />
+							<view>
+								{{$t('login.msg5')}}<text @tap="onDetails($store.state.common.appConfig.user_agreement, $t('setting.msg23'))">{{$t('setting.msg23')}}</text>{{$t('login.msg6')}}<text @tap="onDetails($store.state.common.appConfig.privacy_protection, $t('setting.msg25'))">{{$t('setting.msg25')}}</text>
+							</view>
+						</checkbox-group>
+					</form>
 				</view>
-				<view class="auth-button flex flex-direction">
-					<button class="cu-btn bg-orange sl radius-bock" formType="submit" :disabled="submitDisabled">{{$t('login.msg32')}}</button>
-				</view>
-				<!-- 同意服务条款 -->
-				<checkbox-group :class="checked == 1 ? 'shake-horizontal' : ''" class="auth-clause" @change="CheckboxChange">
-					<checkbox class="orange" :class="checked == 2 ? 'checked' : ''" :checked="checked == 2 ? true : false" value="2" />
-					<view>
-						{{$t('login.msg5')}}<text @tap="onDetails($store.state.common.appConfig.user_agreement, $t('setting.msg23'))">{{$t('setting.msg23')}}</text>{{$t('login.msg6')}}<text @tap="onDetails($store.state.common.appConfig.privacy_protection, $t('setting.msg25'))">{{$t('setting.msg25')}}</text>
-					</view>
-				</checkbox-group>
-			</form>
+			</view>
 		</view>
 		<view class="auth-foot">
 			<view class="menu text-grey">
@@ -43,7 +63,8 @@ export default {
 			title: '表单验证',
 			pageroute: '',
 			mobile: '',
-			checked: 0
+			checked: 0,
+			phone: true,
 		};
 	},
 	onLoad(options) {
@@ -54,6 +75,9 @@ export default {
 		}
 	},
 	methods: {
+		changeEmail() {
+			this.phone = !this.phone
+		},
 		CheckboxChange(e) {
 			this.checked = e.detail.value;
 		},

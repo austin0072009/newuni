@@ -16,7 +16,7 @@ export default {
 			type: Object,
 			default: function() {
 				return {
-					name: '猜你喜欢',
+					// name: '猜你喜欢',
 					type: 'likes',
 					params: [],
 					style: [],
@@ -32,9 +32,9 @@ export default {
 			last_page: 1, //总页码
 			status: 'loading',
 			contentText: {
-				contentdown: '下拉加载更多',
-				contentrefresh: '疯狂加载中...',
-				contentnomore: '我是有底线的'
+				// contentdown: '下拉加载更多',
+				// contentrefresh: '疯狂加载中...',
+				// contentnomore: '我是有底线的'
 			}
 		};
 	},

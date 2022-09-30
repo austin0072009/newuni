@@ -224,19 +224,19 @@
 		
 		<view class="wanl-user-tool padding-top-bj margin-lr-bj">
 			<view class="list text-sm grid col-5 wanl-gray-dark">
-				<view @tap="$wanlshop.auth('/pages/user/money/money')">
+				<!-- <view @tap="$wanlshop.auth('/pages/user/money/money')">
 					<text class="wlIcon-youhuiquantuangou wanl-orange"></text>
 					{{$t('user.wallet')}}
-				</view>
-				<view @tap="$wanlshop.auth('/pages/apps/groups/order/order')">
+				</view> -->
+				<!-- <view @tap="$wanlshop.auth('/pages/apps/groups/order/order')">
 					<text class="wlIcon-pintuan2 wanl-text-yellow"></text>
 					{{$t('user.group_order')}}
 					<view class="cu-tag badge bg-orange" v-if="statistics.order.groups > 0">{{ $wanlshop.toFormat(statistics.order.groups, 'hundred') }}</view>
-				</view>
-				<view @tap="$wanlshop.auth('/pages/user/comment/comment')">
+				</view> -->
+			<!-- 	<view @tap="$wanlshop.auth('/pages/user/comment/comment')">
 					<text class="wlIcon-icon_pinglun wanl-text-red"></text>
 					{{$t('user.comments')}}
-				</view>
+				</view> -->
 				<!-- <view @tap="$wanlshop.auth('/pages/user/distribution/distribution')">
 					<text class="wlIcon-fenxiao wanl-text-yellow"></text>
 					分销
@@ -249,7 +249,7 @@
 					<text class="wlIcon-dizhi wanl-text-yellow"></text>
 					{{$t('user.address')}}
 				</view>
-				<view @tap="$wanlshop.auth('/pages/user/signin/signin')">
+		<!-- 		<view @tap="$wanlshop.auth('/pages/user/signin/signin')">
 					<text class="wlIcon-mianxing-rili wanl-orange"></text>
 					{{$t('user.sign_in')}}
 				</view>
@@ -260,14 +260,15 @@
 				<view @tap="$wanlshop.auth('/pages/user/feedback/lists')">
 					<text class="wlIcon-pingjiazongjie wanl-text-blue"></text>
 					{{$t('user.feedback')}}
-				</view>
-				<view @tap="help">
+				</view> -->
+				<!-- <view @tap="help">
 					<text class="wlIcon-bangzhu3 wanl-text-green"></text>
 					{{$t('user.help_center')}}
-				</view>
+				</view> -->
 				<view @tap="$wanlshop.auth('/pages/user/service')">
 					<text class="wlIcon-icon-service wanl-text-purple"></text>
-					{{$t('user.customer_service_xiaomi')}}
+				<!-- 	{{$t('user.customer_service_xiaomi')}} -->
+				Customer Service
 				</view>
 				<!-- <view @tap="$wanlshop.auth('/pages/apps/find/user')">
 					<text class="wlIcon-pengyouquan wanl-text-red"></text>
@@ -313,10 +314,10 @@
 				</view>
 			</view>
 		</view>
-		<view class="wanl-you-like" :style="{ backgroundImage: 'url(' + $wanlshop.appstc('/common/guess_you_like_it.png') + ')' }"></view>
+		<!-- <view class="wanl-you-like" :style="{ backgroundImage: 'url(' + $wanlshop.appstc('/common/guess_you_like_it.png') + ')' }"></view>
 		<wanl-product :dataList="likeData"/>
 		<uni-load-more :status="status" :content-text="contentText" />
-		<view class="edgeInsetBottom"></view>
+		<view class="edgeInsetBottom"></view> -->
 	</view>
 	<!-- <view v-else>
 		{{$wanlshop.auth('/pages/user')}}

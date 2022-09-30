@@ -229,7 +229,7 @@
 
 				.item {
 					width: 200rpx;
-					height: 110rpx;
+					height: 35rpx;
 					line-height: 110rpx;
 					box-sizing: border-box;
 					display: inline-block;

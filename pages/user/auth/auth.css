@@ -2,6 +2,12 @@ page {
 	background-color: #FFFFFF;
 }
 
+.wanl-login {
+	font-size: 10px;
+	color: #999;
+	margin-top: 5px;
+}
+
 .wanl-title {
 	padding-bottom: 130rpx;
 	padding-top: 170rpx;
@@ -18,7 +24,89 @@ page {
 
 
 .auth {
-	margin: 0 60rpx;
+	width: 100%;
+}
+
+.auth .logo-section {
+	width: 100%;
+	text-align: center;
+}
+
+.auth .scroll__item {
+	padding: 0 11px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 44px;
+	position: relative;
+}
+
+.auth .scroll__item.active::after {
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	height: 3px;
+	width: 20px;
+	border-radius: 3px;
+	background-color: rgb(60, 156, 255);
+}
+
+.form {
+	width: 100%;
+	margin-top: 55rpx;
+}
+
+.form .item {
+	width: 90%;
+	height: 55px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.form .input {
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	border-bottom: 0.1px solid #eee;
+}
+
+.item u-tabs {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 0;
+	flex-basis: auto;
+	align-items: stretch;
+	align-content: flex-start;
+}
+
+.u-tabs__wrapper__nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+	margin-bottom: 30rpx;
+}
+
+.u-tabs__wrapper__nav .scroll-item {
+	padding: 0 11px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.auth uni-image {
+	display: block;
+	width: 75px;
+	height: 75px;
+	margin: 0 auto;
 }
 
 .auth-group {

@@ -1,4 +1,5 @@
 <template>
+	<!-- <view v-if="user.isLogin"> -->
 	<view>
 		<!-- #ifdef MP -->
 		<view class="cu-custom text-white" :style="{color: common.appStyle.user_font_color == 'light'?'#ffffff':'#222222'}">
@@ -287,6 +288,9 @@
 		<uni-load-more :status="status" :content-text="contentText" />
 		<view class="edgeInsetBottom"></view>
 	</view>
+	<!-- <view v-else>
+		{{$wanlshop.auth('/pages/user')}}
+	</view> -->
 </template>
 
 <script>
@@ -382,11 +386,11 @@ export default {
 			})
 			uni.setTabBarItem({
 			    index: 2,
-			    text: this.$t('index.shop')
+			    text: this.$t('index.cart')
 			})
 			uni.setTabBarItem({
 			    index: 3,
-			    text: this.$t('index.cart')
+			    text: this.$t('index.shop')
 			})
 			uni.setTabBarItem({
 			    index: 4,

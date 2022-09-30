@@ -13,11 +13,11 @@
 				}"
 			>
 				<view class="content" :style="{ top: $wanlshop.wanlsys().top + 'px' }">
-					购物车
+					{{ $t('index.mycart') }}
 				</view>
 				<view class="action" @tap="operate()">
-					<text v-if="cart.operate">完成</text>
-					<text v-else>管理</text>
+					<text v-if="cart.operate">{{ $t('index.manage') }}</text>
+					<text v-else>{{ $t('index.done') }}</text>
 					<image src="../static/images/edit.png" style="width: 19px;height: 19px;margin-left: 9px;"></image>
 				</view>
 			</view>

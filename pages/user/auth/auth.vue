@@ -1,27 +1,58 @@
 <template>
 	<view>
 		<view class="auth">
-			<view class="wanl-title">{{$t('login.msg1')}}</view>
-			<form @submit="formSubmit">
-				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input :placeholder="$t('login.msg2')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
-					 confirm-type="next" @input="onKeyInput"></input>
+			<view class="logo-section">
+				<image src="../../../static/images/logo2.png"></image>
+				<view class="wanl-login">{{$t('login.msg')}}</view>
+			</view>
+			<view class="form">
+				<view class="item">
+					<form @submit="formSubmit">
+						
+						<view class="u-tabs__wrapper__nav">
+							<view class="scroll__item" :class="{'active' : phone}" @tap="changeEmail">{{ $t('login.phone') }}</view>
+							<view class="scroll__item" :class="{'active' : !phone}" @tap="changeEmail">{{ $t('login.email') }}</view>
+						</view>
+						
+						<view class="input" v-if="phone">
+							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
+							 confirm-type="next" @input="onKeyInput"></input>
+						</view>
+						<view class="input" v-else>
+							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="16" confirm-type="next" @input="onKeyInput"></input>
+						</view>
+						<view class="uni-form-item uni-column input">
+							<input :password="showPassword" :placeholder="$t('login.msg16')" class="uni-input" password type="text"/>
+							<!-- <input class="uni-input" type="idcard" placeholder="身份证输入键盘" /> -->
+							<!-- <input 
+								 type="text" 
+								 :password="showPassword" 
+								 placeholder=" Please enter the password at least 6 position " 
+								 v-model="password" 
+								 maxlength=12 
+								 class="iptPasswd"
+								/> -->
+								<view @tap="showPwd">
+									  show
+								    </view>
+						</view>
+						<view class="auth-button flex flex-direction">
+							<button form-type="submit" class="cu-btn sl radius-bock bg-orange" :disabled="submitDisabled">{{$t('login.msg3')}}</button>
+							<!-- #ifdef MP-WEIXIN -->
+							<view class="wanl-weixin-btn-info margin-tb-bj text-center text-sm">{{$t('login.msg4')}}</view>
+							<button type="primary" class="cu-btn sl radius-bock bg-no" open-type="getPhoneNumber" @getphonenumber="decryptPhoneNumber">{{$t('login.msg14')}}</button>
+							<!-- #endif -->
+						</view>
+						<!-- 同意服务条款 -->
+						<checkbox-group :class="checked == 1 ? 'shake-horizontal' : ''" class="auth-clause" @change="CheckboxChange">
+							<checkbox class="orange" :class="checked == 2 ? 'checked' : ''" :checked="checked == 2 ? true : false" value="2" />
+							<view>
+								{{$t('login.msg5')}}<text @tap="onDetails($store.state.common.appConfig.user_agreement, $t('setting.msg23'))">{{$t('setting.msg23')}}</text>{{$t('login.msg6')}}<text @tap="onDetails($store.state.common.appConfig.privacy_protection, $t('setting.msg25'))">{{$t('setting.msg25')}}</text>
+							</view>
+						</checkbox-group>
+					</form>
 				</view>
-				<view class="auth-button flex flex-direction">
-					<button form-type="submit" class="cu-btn sl radius-bock bg-orange" :disabled="submitDisabled">{{$t('login.msg3')}}</button>
-					<!-- #ifdef MP-WEIXIN -->
-					<view class="wanl-weixin-btn-info margin-tb-bj text-center text-sm">{{$t('login.msg4')}}</view>
-					<button type="primary" class="cu-btn sl radius-bock bg-no" open-type="getPhoneNumber" @getphonenumber="decryptPhoneNumber">{{$t('login.msg14')}}</button>
-					<!-- #endif -->
-				</view>
-				<!-- 同意服务条款 -->
-				<checkbox-group :class="checked == 1 ? 'shake-horizontal' : ''" class="auth-clause" @change="CheckboxChange">
-					<checkbox class="orange" :class="checked == 2 ? 'checked' : ''" :checked="checked == 2 ? true : false" value="2" />
-					<view>
-						{{$t('login.msg5')}}<text @tap="onDetails($store.state.common.appConfig.user_agreement, $t('setting.msg23'))">{{$t('setting.msg23')}}</text>{{$t('login.msg6')}}<text @tap="onDetails($store.state.common.appConfig.privacy_protection, $t('setting.msg25'))">{{$t('setting.msg25')}}</text>
-					</view>
-				</checkbox-group>
-			</form>
+			</view>
 		</view>
 		<view class="auth-foot">
 			<view class="oauth">
@@ -43,7 +74,10 @@
 				providerList: [],
 				loginRes: {},
 				pageroute: '',
-				checked: 0
+				checked: 0,
+				scrollLeft: 0,
+				phone: true,
+				showPassword: false
 			};
 		},
 		onLoad(option) {
@@ -159,8 +193,15 @@
 			// #endif
 		},
 		methods: {
+			changeEmail() {
+				this.phone = !this.phone
+			},
 			CheckboxChange(e) {
 				this.checked = e.detail.value;
+			},
+			handleSelect(id, index) {
+				this.currentItemId = id;
+				this.scrollLeft = (index - 1) * 50;
 			},
 			// 第三方登录
 			tologin(provider) {
@@ -218,6 +259,9 @@
 					}
 				});
 				// #endif
+			},
+			showPwd() {
+				this.showPassword = !this.showPassword
 			},
 			onKeyInput(e) {
 				this.submitDisabled = false

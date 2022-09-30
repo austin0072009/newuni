@@ -9,21 +9,6 @@
 			}"
 		>
 			<view :style="{ height: headHeight + 'px', paddingTop: headTop + 'px' }" >
-				<view class="navigater flex align-center justify-between">
-					<view class="search flex align-center margin-lr-sm round">
-						<view class="icon text-df text-bold wanl-gray-dark">
-							<text class="wlIcon-sousuo1"></text>
-						</view>
-						<swiper vertical autoplay circular interval="3000">
-							<swiper-item @tap="handleSearch('')">
-								<text class="wanl-gray-dark text-cut">{{$t('index.search')}}</text>
-							</swiper-item>
-							<swiper-item v-for="(item, index) in common.modulesData.searchModules" :key="item.keywords" @tap="handleSearch(item.keywords)" >
-								<text class="wanl-gray-dark text-cut">{{ item.keywords }}</text>
-							</swiper-item>
-						</swiper>
-					</view>
-				</view>
 				<view class="toolbar flex padding-lr-bj align-center">
 					<scroll-view
 						class="scroll"
@@ -35,10 +20,10 @@
 							{{ item.name }}
 						</view>
 					</scroll-view>
-					<view class="category flex align-center" @tap="handleModal">
+					<!-- <view class="category flex align-center" @tap="handleModal">
 						<text v-if="isModal" class="wlIcon-fanhui3"></text>
 						<text v-else class="wlIcon-fanhui4"></text>
-					</view>
+					</view> -->
 				</view>
 			</view>
 		</view>
@@ -111,7 +96,7 @@ export default {
 	},
 	data() {
 		return {
-			headHeight: 75,
+			headHeight: 44,
 			windowHeight: 0,
 			headTop: 0,
 			currentItemId: 'cid163',
@@ -131,7 +116,8 @@ export default {
 		// 计算页面尺寸
 		let sys = this.$wanlshop.wanlsys();
 		this.headTop = sys.top;
-		this.headHeight = sys.height + uni.upx2px(60);
+		// this.headHeight = sys.height + uni.upx2px(60);
+		this.headHeight = 44;
 		this.windowHeight = sys.windowHeight;
 	},
 	methods: {
@@ -146,11 +132,11 @@ export default {
 			})
 			uni.setTabBarItem({
 			    index: 2,
-			    text: this.$t('index.shop')
+			    text: this.$t('index.cart')
 			})
 			uni.setTabBarItem({
 			    index: 3,
-			    text: this.$t('index.cart')
+			    text: this.$t('index.shop')
 			})
 			uni.setTabBarItem({
 			    index: 4,
@@ -188,6 +174,9 @@ export default {
 </script>
 
 <style lang="scss">
+	.wanlshop-container__head {
+		background-color: #fff;
+	}
 .lang_list{
 	background-color: #fff;flex: 1 1 0%; width: 130px; position: absolute; right: 0px;z-index: 99;box-shadow: 0 0 5px 2px #ccc;border-radius: 7px;
 }
@@ -261,11 +250,12 @@ export default {
 							position: absolute;
 							bottom: 0;
 							left: 50%;
+							-webkit-transform: translateX(-50%);
 							transform: translateX(-50%);
-							height: 4rpx;
-							width: 30rpx;
-							border-radius: 6rpx;
-							background-color: #fff;
+							height: 6rpx;
+							width: 40rpx;
+							border-radius: 100px;
+							background-color: #3c9cff;
 						}
 					}
 				}

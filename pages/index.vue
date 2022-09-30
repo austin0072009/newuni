@@ -316,11 +316,11 @@ export default {
 			})
 			uni.setTabBarItem({
 			    index: 2,
-			    text: this.$t('index.shop')
+			    text: this.$t('index.cart')
 			})
 			uni.setTabBarItem({
 			    index: 3,
-			    text: this.$t('index.cart')
+			    text: this.$t('index.shop')
 			})
 			uni.setTabBarItem({
 			    index: 4,

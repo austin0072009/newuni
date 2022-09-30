@@ -3,7 +3,7 @@
 		<!-- 导航条 -->
 		<view class="cu-custom" :style="{height: $wanlshop.wanlsys().height + 'px' }">
 			<view class="cu-bar bg-bgcolor fixed" :style="{ height: $wanlshop.wanlsys().height + 'px', paddingTop: $wanlshop.wanlsys().top + 'px'}">
-				<view class="action" @tap="$wanlshop.back(1)">
+				<view class="action" @tap="$wanlshop.back(2)">
 					<text class="wlIcon-fanhui1"></text>
 				</view>
 				<view class="search-form round" @tap="search()">

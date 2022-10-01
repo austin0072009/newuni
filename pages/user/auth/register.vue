@@ -14,7 +14,7 @@
 						</view>
 						
 						<view class="input" v-if="phone">
-							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
+							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="mobile" type="text" maxlength="16"
 							 confirm-type="next" @input="onKeyInput" v-model="mobile"></input>
 						</view>
 						<view class="input" v-else>

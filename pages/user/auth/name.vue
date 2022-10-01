@@ -1,41 +1,46 @@
 <template>
 	<view>
 		<view class="auth">
-			<view class="wanl-title">{{$t('login.msg15')}}</view>
-			<form @submit="formSubmit">
-				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input 
-						type="text"
-						:placeholder="$t('setting.msg6')" 
-						confirm-type="next" 
-						maxlength="16"
-						placeholder-class="placeholder" 
-						name="account"
-						:value="account"
-					></input>
-				</view>
-				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input 
-						type="text"
-						:placeholder="$t('login.msg16')" 
-						password="true" 
-						confirm-type="done"
-						maxlength="16"
-						placeholder-class="placeholder" 
-						name="password"
-						@input="onKeyInput"
-					></input>
-				</view>
-				<view class="text-right" @tap="retrieve">
-					{{$t('login.msg17')}}
-				</view>
-				<view class="auth-button flex flex-direction">
-					<button class="cu-btn bg-orange sl radius-bock" form-type="submit" :disabled="submitDisabled">{{$t('login.msg18')}}</button>
-				</view>
-				<view class="text-center" @tap="phone">
-					{{$t('login.msg19')}}
-				</view>
-			</form>
+			<view class="logo-section">
+				<image src="../../../static/images/logo2.png"></image>
+				<view class="wanl-login">{{$t('login.msg')}}</view>
+			</view>
+			<view class="form" style="padding: 20rpx;">
+				<form @submit="formSubmit">
+					<view class="auth-group radius-bock bg-gray wlian-grey-light">
+						<input 
+							type="text"
+							:placeholder="$t('setting.msg6')" 
+							confirm-type="next" 
+							maxlength="16"
+							placeholder-class="placeholder" 
+							name="account"
+							:value="account"
+						></input>
+					</view>
+					<view class="auth-group radius-bock bg-gray wlian-grey-light">
+						<input 
+							type="text"
+							:placeholder="$t('login.msg16')" 
+							password="true" 
+							confirm-type="done"
+							maxlength="16"
+							placeholder-class="placeholder" 
+							name="password"
+							@input="onKeyInput"
+						></input>
+					</view>
+					<view class="text-right" @tap="retrieve">
+						{{$t('login.msg17')}}
+					</view>
+					<view class="auth-button flex flex-direction">
+						<button class="cu-btn bg-orange sl radius-bock" form-type="submit" :disabled="submitDisabled">{{$t('login.msg18')}}</button>
+					</view>
+					<view class="text-center" @tap="phone">
+						{{$t('login.msg19')}}
+					</view>
+				</form>
+			</view>
 		</view>
 		<view class="auth-foot">
 			<view class="menu text-grey">

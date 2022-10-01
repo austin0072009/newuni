@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="auth">
+		<view class="auth" style="padding: 20rpx;">
 			<view class="auth-title">{{$t('setting.msg16')}}</view>
 			<view class="auth-mobile">
 				{{$t('setting.msg17')}}<text>{{mobile}}</text>

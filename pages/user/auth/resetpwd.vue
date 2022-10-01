@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="auth">
+		<view class="auth" style="padding: 20rpx;">
 			<view class="wanl-title">{{$t('address.msg12')}}{{username}}{{$t('login.msg38')}}</view> 
 			<form @submit="formSubmit">
 				<view class="auth-group radius-bock bg-gray wlian-grey-light">

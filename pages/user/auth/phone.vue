@@ -1,27 +1,32 @@
 <template>
 	<view>
 		<view class="auth">
-			<view class="wanl-title">{{$t('login.msg15')}}</view>
-			<form @submit="formSubmit">
-				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input 
-						:placeholder="$t('login.msg31')" 
-						type="number" 
-						maxlength="11" 
-						confirm-type="next" 
-						placeholder-class="placeholder" 
-						name="mobile"  
-						:value="mobile"
-					></input>
-				</view>
-				
-				<view class="auth-button flex flex-direction">
-					<button class="cu-btn bg-orange sl radius-bock" form-type="submit">{{$t('login.msg32')}}</button><!-- disabled="true" -->
-				</view>
-				<view class="text-center" @tap="name">
-					{{$t('login.msg33')}}
-				</view>
-			</form>
+			<view class="logo-section">
+				<image src="../../../static/images/logo2.png"></image>
+				<view class="wanl-login">{{$t('login.msg')}}</view>
+			</view>
+			<view class="form" style="padding: 20rpx;">
+				<form @submit="formSubmit">
+					<view class="auth-group radius-bock bg-gray wlian-grey-light">
+						<input 
+							:placeholder="$t('login.msg31')" 
+							type="number" 
+							maxlength="11" 
+							confirm-type="next" 
+							placeholder-class="placeholder" 
+							name="mobile"  
+							:value="mobile"
+						></input>
+					</view>
+					
+					<view class="auth-button flex flex-direction">
+						<button class="cu-btn bg-orange sl radius-bock" form-type="submit">{{$t('login.msg32')}}</button><!-- disabled="true" -->
+					</view>
+					<view class="text-center" @tap="name">
+						{{$t('login.msg33')}}
+					</view>
+				</form>
+			</view>
 		</view>
 		<view class="auth-foot">
 			<view class="menu text-grey">

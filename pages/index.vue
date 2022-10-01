@@ -39,7 +39,7 @@
 				<view class="lang_list" v-if="langShow">
 					<view class="lang_item" @click="cutLang('zh')">
 						<!-- <view class="lang_item_view"> -->
-							<text class="lang_item_text">中文</text>
+							<text class="lang_item_text">简体中文</text>
 							<image src="../static/images/lang/zh.png" class="lang_item_img"></image>
 						<!-- </view> -->
 					</view>
@@ -47,6 +47,36 @@
 						<!-- <view class="lang_item_view"> -->
 							<text class="lang_item_text">English</text>
 							<image src="../static/images/lang/en.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
+					<view class="lang_item" @click="cutLang('zht')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">繁体中文</text>
+							<image src="../static/images/lang/hk.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
+					<view class="lang_item" @click="cutLang('my')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">Malaysia</text>
+							<image src="../static/images/lang/bm.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
+					<view class="lang_item" @click="cutLang('phi')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">Fillipino</text>
+							<image src="../static/images/lang/ph.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
+					<view class="lang_item" @click="cutLang('th')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">Thailand</text>
+							<image src="../static/images/lang/th.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
+					<view class="lang_item" @click="cutLang('vt')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">Vietnam</text>
+							<image src="../static/images/lang/vt.png" class="lang_item_img"></image>
 						<!-- </view> -->
 					</view>
 				</view>
@@ -300,11 +330,32 @@ export default {
 		},
 		langType(type){
 			if(type == 'zh'){
-				this.langText = '中文';
+				this.langText = '简体中文';
 				this.langImg = '../static/images/lang/zh.png';
-			}else if(type == 'en'){
+			}
+			else if(type == 'en'){
 				this.langText = 'English';
 				this.langImg = '../static/images/lang/en.png';
+			}
+			else if(type == 'zht'){
+				this.langText = '繁体中文';
+				this.langImg = '../static/images/lang/hk.png';
+			}
+			else if(type == 'my'){
+				this.langText = 'Malaysia';
+				this.langImg = '../static/images/lang/bm.png';
+			}
+			else if(type == 'phi'){
+				this.langText = 'Filipino';
+				this.langImg = '../static/images/lang/ph.png';
+			}
+			else if(type == 'th'){
+				this.langText = 'Thailand';
+				this.langImg = '../static/images/lang/th.png';
+			}
+			else if(type == 'vt'){
+				this.langText = 'Vietnam';
+				this.langImg = '../static/images/lang/vt.png';
 			}
 			uni.setTabBarItem({
 			    index: 0,

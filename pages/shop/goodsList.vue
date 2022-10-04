@@ -39,38 +39,58 @@
 		>
 			<swiper-item item-id="zy">
 				<view class="pf-content">
-					<wanl-empty src="find_default3x" :text="$t('other.empty2')" v-if="ghList.length === 0"/>
-					<view class="pf-list" v-for="(item, index) in ghList">
-						<image class="pf-image" :src="$wanlshop.oss(item.image, 400, 0)"></image>
-						<text class="pf-title">{{item.title}}</text>
-						<view class="bottom">
-							{{$t('other.msg20')}}:
-							<text class="pf-price">￥{{item.price}}</text>
+					<scroll-view
+						class="wanlshop-category-container"
+						:style="{
+							height: windowHeight + 'px'
+						}"
+						scroll-y 
+						@scrolltoupper="handleUpper"
+						@scrolltolower="handleLower">
+						<wanl-empty src="find_default3x" :text="$t('other.empty2')" v-if="ghLength == 0"/>
+						<view class="pf-list" v-for="(item, index) in ghList">
+							<image class="pf-image" :src="$wanlshop.oss(item.image, 400, 0)"></image>
+							<text class="pf-title">{{item.title}}</text>
+							<view class="bottom">
+								{{$t('other.msg20')}}:
+								<text class="pf-price">￥{{item.price}}</text>
+							</view>
+							<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(1,item.id)">
+								{{$t('other.msg44')}}
+							</view>
 						</view>
-						<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(1,item.id)">
-							{{$t('other.msg44')}}
-						</view>
-					</view>
+						<!-- <uni-load-more v-if="ghList.length != 0" :status="status" :content-text="contentText" /> -->
+					</scroll-view>
 				</view>
 			</swiper-item>
 			<swiper-item item-id="gys">
 				<view class="pf-content">
-					<wanl-empty src="find_default3x" :text="$t('other.empty2')" v-if="phList.length === 0"/>
-					<view class="pf-list" v-for="(item, index) in phList">
-						<image class="pf-image" :src="$wanlshop.oss(item.image, 400, 0)"></image>
-						<text class="pf-title">{{item.title}}</text>
-						<view class="bottom">
-							{{$t('other.msg21')}}:
-							<text class="pf-price">￥{{item.jh_price}}</text>
+					<scroll-view
+						class="wanlshop-category-container"
+						:style="{
+							height: windowHeight + 'px'
+						}"
+						scroll-y 
+						@scrolltoupper="handleUpper"
+						@scrolltolower="handleLower">
+						<wanl-empty src="find_default3x" :text="$t('other.empty2')" v-if="phLength == 0"/>
+						<view class="pf-list" v-for="(item, index) in phList">
+							<image class="pf-image" :src="$wanlshop.oss(item.image, 400, 0)"></image>
+							<text class="pf-title">{{item.title}}</text>
+							<view class="bottom">
+								{{$t('other.msg21')}}:
+								<text class="pf-price">￥{{item.jh_price}}</text>
+							</view>
+							<view class="bottom">
+								{{$t('other.msg22')}}:
+								<text class="pf-price">￥{{item.price}}</text>
+							</view>
+							<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(2,item.id)">
+								{{$t('other.msg45')}}
+							</view>
 						</view>
-						<view class="bottom">
-							{{$t('other.msg22')}}:
-							<text class="pf-price">￥{{item.price}}</text>
-						</view>
-						<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(2,item.id)">
-							{{$t('other.msg45')}}
-						</view>
-					</view>
+						<!-- <uni-load-more v-if="phList.length != 0" :status="status2" :content-text="contentText" /> -->
+					</scroll-view>
 				</view>
 			</swiper-item>
 		</swiper>
@@ -92,7 +112,20 @@ export default {
 			currentData: {},
 			scrollLeft: 0,
 			ghList:[],
-			phList:[]
+			ghLength:0,
+			phList:[],
+			phLength:0,
+			page: 1,
+			last_page: 0,
+			status: 'loading',
+			page2: 1,
+			last_page2: 0,
+			status2: 'loading',
+			contentText: {
+				contentdown: '',
+				contentrefresh: this.$t('product.msg15'),
+				contentnomore: this.$t('product.empty2')
+			}
 		};
 	},
 	onLoad() {
@@ -106,33 +139,79 @@ export default {
 		this.headTop = sys.top;
 		this.headHeight = sys.height;
 		this.windowHeight = sys.windowHeight;
-		this.getList();
+		this.getList('upper');
 	},
 	methods: {
-		async getList(){
-			this.$api.get({
-				url: '/wanlshop/shop/goodList',
-				data: {
-					type: 1
-				},
-				success: res => {
-					this.ghList = res;
+		async getList(type){
+			if(this.currentItemId == 'zy'){
+				this.status = 'loading';
+				if(type === 'upper'){
+					this.page = 1;
+				}else if(type === 'lower'){
+					if (this.page >= this.last_page) {
+						this.status = 'noMore';
+						return false;
+					} else {
+						this.page += 1;
+					}
 				}
-			});
-			this.$api.get({
-				url: '/wanlshop/shop/goodList',
-				data: {
-					type: 2
-				},
-				success: res => {
-					this.phList = res;
+				this.$api.get({
+					url: '/wanlshop/shop/goodList',
+					data: {
+						type: 1,
+						page: this.page
+					},
+					success: res => {
+						this.status = 'more';
+						if(type === 'lower'){
+							this.ghList = this.ghList.concat(res.data);
+						}else{
+							this.ghList = res.data;
+						}
+						this.page = res.current_page; //当前页码
+						this.last_page = res.last_page; //总页码
+						this.ghLength = this.ghList.length;
+					}
+				});
+			}
+			
+			if(this.currentItemId == 'gys'){
+				this.status2 = 'loading';
+				if(type === 'upper'){
+					this.page2 = 1;
+				}else if(type === 'lower'){
+					if (this.page2 >= this.last_page2) {
+						this.status2 = 'noMore';
+						return false;
+					} else {
+						this.page2 += 1;
+					}
 				}
-			});
+				this.$api.get({
+					url: '/wanlshop/shop/goodList',
+					data: {
+						type: 2,
+						page: this.page2
+					},
+					success: res => {
+						this.status2 = 'more';
+						if(type === 'lower'){
+							this.phList = this.phList.concat(res.data);
+						}else{
+							this.phList = res.data;
+						}
+						this.page2 = res.current_page; //当前页码
+						this.last_page2 = res.last_page; //总页码
+						this.phLength = this.phList.length;
+					}
+				});
+			}
 		},
 		// 选择Tag
 		handleSelect(id, index) {
 			this.currentItemId = id;
 			this.scrollLeft = (index - 1) * 50;
+			this.getList('upper');
 		},
 		// 动画
 		animationFinish(e) {
@@ -155,10 +234,16 @@ export default {
 				},
 				success: res => {
 					this.$wanlshop.msg(this.$t('other.msg46'));
-					this.getList();
+					this.getList('upper');
 				}
 			});
-		}
+		},
+		handleUpper() {
+			// this.loadData('upper');
+		},
+		handleLower() {
+			this.getList('lower');
+		},
 	}
 };
 </script>
@@ -288,9 +373,11 @@ export default {
     margin-top: 12px;
 }
 .pf-content .pf-list {
-    width: 48.4%;
+    width: 48%;
     background-color: #fff;
     margin-bottom: 10px;
+	float: left;
+	margin:0 1%;
 }
 .pf-content .pf-list .pf-image {
     width: 138px;

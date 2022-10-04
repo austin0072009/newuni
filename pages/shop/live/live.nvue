@@ -95,7 +95,7 @@
 							</view>
 							<view class="wanl-live-popup-list-item-subject-operation">
 								<view class="wanl-live-popup-list-item-subject-operation-price">
-									<text class="wanl-live-popup-list-item-subject-operation-price-text">￥{{item.price}}</text>
+									<text class="wanl-live-popup-list-item-subject-operation-price-text">${{item.price}}</text>
 								</view>
 								<view class="wanl-live-popup-list-item-subject-operation-button">
 									<view class="wanl-live-popup-list-item-subject-operation-button-shopping">
@@ -132,7 +132,7 @@
 							</view>
 							<view class="wanl-live-popup-list-item-subject-operation">
 								<view class="wanl-live-popup-list-item-subject-operation-price">
-									<text class="wanl-live-popup-list-item-subject-operation-price-text">￥{{item.price}}</text>
+									<text class="wanl-live-popup-list-item-subject-operation-price-text">${{item.price}}</text>
 								</view>
 								<view class="wanl-live-popup-list-item-subject-operation-button" @tap="delGoods(item.id)">
 									<view class="wanl-live-popup-list-item-subject-operation-button-shopping">

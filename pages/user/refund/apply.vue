@@ -118,27 +118,27 @@ export default {
 		//计算运费价格,当只有一个商品或 运费策略累加运费可全退
 		if(this.goods_number == 1 || this.freight_type == 2){
 			let price = this.$wanlshop.bcadd(data.goods.actual_payment, data.goods.freight_price);
-			let info = `${this.$t('order.refund_msg12')}￥${price}`;
+			let info = `${this.$t('order.refund_msg12')}$${price}`;
 			if(parseInt(data.discount_price) > 0){
-				info += `，${this.$t('order.refund_msg13')}￥${this.$wanlshop.bcmul(data.goods.price, data.goods.number)}，优惠￥${data.goods.discount_price}`;
+				info += `，${this.$t('order.refund_msg13')}$${this.$wanlshop.bcmul(data.goods.price, data.goods.number)}，优惠$${data.goods.discount_price}`;
 			}
 			if(parseInt(data.goods.freight_price) > 0){
-				info += `，${this.$t('order.refund_msg14')}￥${data.goods.freight_price}`;
+				info += `，${this.$t('order.refund_msg14')}$${data.goods.freight_price}`;
 			}
 			this.amount.info = info;
-			this.amount.placeholder = `${this.$t('order.refund_msg15')} ￥${price} 元`;
+			this.amount.placeholder = `${this.$t('order.refund_msg15')} $${price} 元`;
 			this.amount.total = Number(price);
 		}else{
 			let price = data.goods.actual_payment;
-			let info = `${this.$t('order.refund_msg16')}￥${price}`;
+			let info = `${this.$t('order.refund_msg16')}$${price}`;
 			if(parseInt(data.goods.discount_price) > 0){
-				info += `，${this.$t('order.refund_msg13')}￥${this.$wanlshop.bcmul(data.goods.price, data.goods.number)}，优惠￥${data.goods.discount_price}`;
+				info += `，${this.$t('order.refund_msg13')}$${this.$wanlshop.bcmul(data.goods.price, data.goods.number)}，优惠$${data.goods.discount_price}`;
 			}
 			if(parseInt(data.goods.freight_price) > 0){
-				info += `，${this.$t('order.refund_msg17')}￥${data.goods.freight_price}`;
+				info += `，${this.$t('order.refund_msg17')}$${data.goods.freight_price}`;
 			}
 			this.amount.info = info;
-			this.amount.placeholder = `${this.$t('order.refund_msg15')} ￥${price} 元`;
+			this.amount.placeholder = `${this.$t('order.refund_msg15')} $${price} 元`;
 			this.amount.total = Number(price);
 		}
 	},

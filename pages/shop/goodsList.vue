@@ -53,7 +53,7 @@
 							<text class="pf-title">{{item.title}}</text>
 							<view class="bottom">
 								{{$t('other.msg20')}}:
-								<text class="pf-price">￥{{item.price}}</text>
+								<text class="pf-price">${{item.price}}</text>
 							</view>
 							<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(1,item.id)">
 								{{$t('other.msg44')}}
@@ -79,11 +79,11 @@
 							<text class="pf-title">{{item.title}}</text>
 							<view class="bottom">
 								{{$t('other.msg21')}}:
-								<text class="pf-price">￥{{item.jh_price}}</text>
+								<text class="pf-price">${{item.jh_price}}</text>
 							</view>
 							<view class="bottom">
 								{{$t('other.msg22')}}:
-								<text class="pf-price">￥{{item.price}}</text>
+								<text class="pf-price">${{item.price}}</text>
 							</view>
 							<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(2,item.id)">
 								{{$t('other.msg45')}}

@@ -25,7 +25,7 @@
 							<view class="dataList" v-for="(item2, index2) in item.goods" @tap="toGood(item2.id)">
 								<view class="list">
 									<image :src="$wanlshop.oss(item2.image, 400, 0)" style="width: 100%;height: 3rem;"></image>
-									<view style="width: 100%; text-align: center;color: red;">￥{{item2.price}}</view>
+									<view style="width: 100%; text-align: center;color: red;">${{item2.price}}</view>
 								</view>
 							</view>
 						</view>

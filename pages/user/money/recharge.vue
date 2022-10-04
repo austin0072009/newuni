@@ -7,7 +7,7 @@
 				<text class="title">{{$t('money.top_up_amount')}}</text>
 				<view class="margin-top price">
 					<view class="symbol">
-						<text>￥</text>
+						<text>$</text>
 					</view>
 					<input type="digit" maxlength="5" focus v-model="money"/>
 					<view class="text-lg wanl-gray-light" @tap="emptyInput" v-if="money">
@@ -15,7 +15,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="list-box">
+		<!-- 	<view class="list-box">
 				<view class="item" v-for="(item, index) in payList" :key="index">
 					<text :class="'wlIcon-'+ item.type +'-pay'"></text>
 					<view class="action">
@@ -30,7 +30,7 @@
 						<text class="wlIcon-xuanze-danxuan wanl-gray-light"></text>
 					</view>
 				</view>
-			</view>
+			</view> -->
 			<button class="mix-btn wanl-bg-redorange" @tap="confirm()" :loading="loading"> {{$t('money.top_up')}}</button>
 			<view class="footer text-center">
 				<view> © {{$t('money.thousands_of_union_pay')}} </view>

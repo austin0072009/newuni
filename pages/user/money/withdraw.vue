@@ -31,7 +31,7 @@
 			</view>
 			<view class="margin-tb-bj price">
 				<view class="symbol">
-					<text>￥</text>
+					<text>$</text>
 				</view>
 				<input type="digit" maxlength="5" focus @input="replaceInput"/>
 				<view class="text-lg wanl-gray-light" @tap="emptyInput" v-if="money">

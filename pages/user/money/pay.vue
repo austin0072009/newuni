@@ -13,8 +13,8 @@
 					<view class="action">
 						<text class="title wanl-pip">{{item.name}}</text>
 						<view v-if="item.type == 'balance'">
-							<text v-if="isbalance">{{$t('money.available_balance')}} ￥{{user.money}}</text>
-							<text v-else>{{$t('order.pay_msg1')}} ￥{{user.money}}</text>
+							<text v-if="isbalance">{{$t('money.available_balance')}} ${{user.money}}</text>
+							<text v-else>{{$t('order.pay_msg1')}} ${{user.money}}</text>
 						</view>
 						<view v-else>{{item.describe}}</view>
 					</view>

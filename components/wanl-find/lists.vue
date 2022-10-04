@@ -223,7 +223,7 @@
 						<image lazy-load class="find-list-item-goods-item-img margin-right-sm" :src="oss(goods.image, 50, 50)"></image>
 						<view class="flex-sub" style="width: 0;">
 							<text class="find-list-item-goods-item-content-title-text text-df">{{goods.title}}</text>
-							<text class="text-sm text-orange">￥{{goods.price}}</text>
+							<text class="text-sm text-orange">${{goods.price}}</text>
 						</view>
 						<view class="find-list-item-goods-item-icon align-center">
 							<text class="icon text-sm text-gray">&#xe63f;</text>

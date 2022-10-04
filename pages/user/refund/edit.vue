@@ -127,7 +127,7 @@ export default {
 				return false;
 			}
 			if (this.refund.price > this.amount.total) {
-				this.$wanlshop.msg(this.$t('refund.edit_msg5') + '￥'+this.amount.total+this.$t('money.yuan'));
+				this.$wanlshop.msg(this.$t('refund.edit_msg5') + '$'+this.amount.total+this.$t('money.yuan'));
 				return false;
 			}
 			// 提交
@@ -153,7 +153,7 @@ export default {
 		moneyInput(e) {
 			let money = e.detail.value;
 			if (money > this.amount.total) {
-				this.$wanlshop.msg(this.$t('refund.edit_msg5')+'￥'+this.amount.total+this.$t('money.yuan'));
+				this.$wanlshop.msg(this.$t('refund.edit_msg5')+'$'+this.amount.total+this.$t('money.yuan'));
 			}
 			// 判断是否超过订单总额,超过提示
 			this.refund.price = money

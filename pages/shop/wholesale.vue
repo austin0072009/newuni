@@ -83,9 +83,9 @@
 				<view class="u-popup__content" style="border-radius: 10px;">
 					<view class="content">
 						<view class="text">
-							<view class="item">{{$t('other.msg38')}}：<text class="price">￥{{good.price}}</text>
+							<view class="item">{{$t('other.msg38')}}：<text class="price">${{good.price}}</text>
 							</view>
-							<view class="item">{{$t('other.msg39')}}：<text class="price">￥{{good.ture_price}}</text>
+							<view class="item">{{$t('other.msg39')}}：<text class="price">${{good.ture_price}}</text>
 							</view>
 						</view>
 						<view class="button">

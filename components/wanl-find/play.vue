@@ -105,7 +105,7 @@
 											</view>
 											<view class="flex-direction justify-between">
 												<view class="goods-item-content-details-price">
-													<text class="text-df text-orange">￥{{goods.price}}</text>
+													<text class="text-df text-orange">${{goods.price}}</text>
 												</view>
 												<view class="padding-tb-s wanl-bg-orange radius padding-lr-xs align-center flex-direction" @click.stop="handleGoods(goods.id)">
 													<text class="icon text-min">&#xe636;</text>

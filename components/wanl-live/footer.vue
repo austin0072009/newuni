@@ -60,7 +60,7 @@
 							</view>
 							<view class="wanl-live-popup-list-item-subject-operation">
 								<view class="wanl-live-popup-list-item-subject-operation-price">
-									<text class="wanl-live-popup-list-item-subject-operation-price-text">￥{{item.price}}</text>
+									<text class="wanl-live-popup-list-item-subject-operation-price-text">${{item.price}}</text>
 								</view>
 								<view class="wanl-live-popup-list-item-subject-operation-button">
 									<view class="wanl-live-popup-list-item-subject-operation-button-seek" @tap="sendLive('seek',index+1)" v-if="state == 1">

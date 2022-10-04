@@ -16,7 +16,7 @@
 				<image class="pf-image" :src="$wanlshop.oss(item.image, 400, 0)"></image>
 				<text class="pf-title">{{item.title}}</text>
 				<view class="bottom">
-					<text class="pf-price">￥{{item.price}}</text>
+					<text class="pf-price">${{item.price}}</text>
 					<button v-if="item.is_add == 1" class="u-button u-reset-button pf-button u-button--info u-button--circle u-button--mini" @tap="autoShopGoods(item)">{{$t('other.msg43')}}</button>
 					<button v-else class="u-button u-reset-button pf-button u-button--info u-button--circle u-button--mini" style="background-color: #fbad8a;" disabled @tap="autoShopGoods(item)">{{$t('other.msg43')}}</button>
 				</view>

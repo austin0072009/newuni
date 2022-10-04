@@ -47,7 +47,7 @@
 							<span>{{$t('other.msg27')}}：</span>
 						</text>
 						<text class="info-num">
-							<span>￥{{statistics.totalorderamount}}</span>
+							<span>${{statistics.totalorderamount}}</span>
 						</text>
 					</view>
 				</view>

@@ -154,7 +154,7 @@
 				<view class="conten flex ">
 					<view class="wanl-ticket text-sm" v-for="(item, index) in goodsData.coupon" :key="index" v-if="index < 2">
 						<block v-if="item.type == 'reduction' || (item.type == 'vip' && item.usertype == 'reduction')">
-							<view class="ticket-price"> ￥{{Number(item.price)}} </view>
+							<view class="ticket-price"> ${{Number(item.price)}} </view>
 							<view class="ticket-title"> <text>满{{Number(item.limit)}}减{{Number(item.price)}}</text> </view>
 						</block>
 						<block v-if="item.type == 'discount' || (item.type == 'vip' && item.usertype == 'discount')">

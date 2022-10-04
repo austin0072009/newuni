@@ -75,7 +75,7 @@
 							<block v-if="couponData[index]">
 								<text class="wlIcon-youhuiquantuangou text-red margin-right-xs"></text>
 								<block v-if="couponData[index].type == 'reduction' || (couponData[index].type == 'vip' && couponData[index].usertype == 'reduction')">
-									<text>满{{Number(couponData[index].limit)}}减</text> ￥{{Number(couponData[index].price)}}
+									<text>满{{Number(couponData[index].limit)}}减</text> ${{Number(couponData[index].price)}}
 								</block>
 								<block v-if="couponData[index].type == 'discount' || (couponData[index].type == 'vip' && couponData[index].usertype == 'discount')">
 									<text>满{{Number(couponData[index].limit)}}打</text> {{Number(couponData[index].discount)}} 折

@@ -53,7 +53,7 @@
 							<block v-if="couponData[index]">
 								<text class="wlIcon-youhuiquantuangou text-red margin-right-xs"></text>
 								<block v-if="couponData[index].type == 'reduction' || (couponData[index].type == 'vip' && couponData[index].usertype == 'reduction')">
-									<text>{{$t('coupon.full')}}{{Number(couponData[index].limit)}}{{$t('coupon.reduction')}}</text> ￥{{Number(couponData[index].price)}}
+									<text>{{$t('coupon.full')}}{{Number(couponData[index].limit)}}{{$t('coupon.reduction')}}</text> ${{Number(couponData[index].price)}}
 								</block>
 								<block v-if="couponData[index].type == 'discount' || (couponData[index].type == 'vip' && couponData[index].usertype == 'discount')">
 									<text>{{$t('coupon.full')}}{{Number(couponData[index].limit)}}{{$t('coupon.play')}}</text> {{Number(couponData[index].discount)}} {{$t('coupon.fold')}}

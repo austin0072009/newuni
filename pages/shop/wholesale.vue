@@ -48,6 +48,9 @@
 					:cid="item.id"
 					:currentItemId="currentItemId"
 					v-on:pThumbsUp="thumbsUpChange"
+					:headHeight="headHeight"
+					:windowHeight="windowHeight"
+					:homeModules="common.modulesData.homeModules"
 				/>
 			</swiper-item>
 		</swiper>
@@ -116,7 +119,7 @@ export default {
 			headHeight: 75,
 			windowHeight: 0,
 			headTop: 0,
-			currentItemId: 'cid163',
+			currentItemId: 'cid1',
 			currentData: {},
 			scrollLeft: 0,
 			isModal: false,
@@ -127,14 +130,6 @@ export default {
 	onLoad() {
 		uni.setNavigationBarTitle({
 			title:this.$t('other.wholesale_title')
-		})
-		uni.setNavigationBarColor({
-		    frontColor: '#ffffff',
-		    backgroundColor: 'rgb(250, 67, 106)',
-		    animation: {
-		        duration: 400,
-		        timingFunc: 'easeIn'
-		    }
 		})
 	},
 	onShow() {

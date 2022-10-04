@@ -63,7 +63,6 @@ page {
 .form .item {
 	width: 90%;
 	height: 55px;
-	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
 }

@@ -14,7 +14,7 @@
 export default {
 	socketurl: 'wss://im.ff1002.top', //如果是ws:// 地址为ws://你服务器IP:7272 如 ws://123.4.56.78:7272，使用wss 后面不需要添加 :7272 端口
 	cdnurl: 'https://img.daifu5.cn',
-	appurl: 'https://www.ff1002.top/api', //如二级域名：https://api.wanlshop.com 或不使用二级域名 https://www.wanlshop.com/api
+	appurl: 'https://www.live-shopee.com/api', //如二级域名：https://api.wanlshop.com 或不使用二级域名 https://www.wanlshop.com/api
 	amapkey: '0a9f67a6f8f7cc3315d30846a0fde88b',
 	appid: 'wx6****************7a', // 公众号appid
 	versionName: '1.1.2',

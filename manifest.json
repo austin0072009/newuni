@@ -261,13 +261,14 @@
                 }
             }
         },
-        "domain" : "https://www.ff1002.top",
+      //  "domain" : "https://www.ff1002.top",
+	  "domain" : "https://www.live-shopee.com",
         "optimization" : {
             "treeShaking" : {
                 "enable" : true
             }
         },
-        "title" : "掌商城",
+        "title" : "Shopee",
         "uniStatistics" : {
             "enable" : false
         },

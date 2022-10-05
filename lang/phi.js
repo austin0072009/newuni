@@ -87,6 +87,8 @@ export default {
 		"function_of_direct": "Direktang Pag-andar",
 		"empty": "Walang nahanap",
 		"info": "impormasyon",
+		"bank_recharge": 'Bank Recharge',
+		"usdt_recharge": 'USDT Recharge'
 	},
 	//拼团
 	groups: {
@@ -440,6 +442,17 @@ export default {
 		"oa_pay": "Opisyal na Pagbabayad ng Account",
 		"oa_pay_text": "Inirerekomenda na gamitin ang opisyal na account upang magbayad",
 		"ail_pay": "Alipay",
+		"union_pay": 'UnionPay',
+		"union_pay_text": 'UnionPay(UnionPay) para mag-recharge, mangyaring makipag-ugnayan sa customer service secretary para pangasiwaan ang negosyo!',
+		"upload_voucher": 'I-click upang mag-upload ng voucher ng pagbabayad',
+		"confirm_transfer": 'Kumpirmahin ang paglipat',
+		"under_review": 'nasa ilalim ng pagsusuri',
+		"usdt_pay": 'USDT',
+		"payment_tip_title": 'Mabait na tips:',
+		"payment_tip_1": '1. Mangyaring makipag-ugnayan sa customer service secretary upang pangasiwaan ang recharge na negosyo upang matiyak na ang balanse ng account ay naabot sa oras!',
+		"payment_tip_2": '2.Pagkatapos makumpleto ang recharge, mangyaring isumite ang mapa ng mga detalye ng account; ito ay maginhawa para sa kawani na kumpirmahin ang halaga ng account!',
+		"payment_tip_3": '3.Pagkatapos ng 21:00 pm; magsumite ng recharge; ito ay maaantala hanggang 9:00-10:00 am sa susunod na araw upang maabot ang balanse ng account！',
+		"payment_tip_4": '4.Kung nakatagpo ka ng mga problema, mangyaring kumonsulta sa customer service secretary sa oras upang harapin ang mga kaugnay na problema para sa iyo!',
 		"wechat_pay": "WeChat Pay",
 		"wechat_pay_text": "Inirerekomenda ang pagbabayad sa WeChat",
 		"baidu_pay": "Baidu Cashier",

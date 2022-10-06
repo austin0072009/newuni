@@ -261,8 +261,8 @@
                 }
             }
         },
-      //  "domain" : "https://www.ff1002.top",
-	  "domain" : "https://www.live-shopee.com",
+        //  "domain" : "https://www.ff1002.top",
+        "domain" : "https://www.live-shopee.com",
         "optimization" : {
             "treeShaking" : {
                 "enable" : true

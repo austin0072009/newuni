@@ -151,8 +151,9 @@
 			handleProduct(category_id, category_name) {
 				if(this.shopId === 0){
 					this.$wanlshop.to(
-						`/pages/product/list?data=${JSON.stringify({ category_id: category_id, category_name: category_name })}`
-					);
+						//`/pages/product/list?data=${JSON.stringify({ category_id: category_id, category_name: category_name })}`
+						// `/pages/product/list?type=find&data=${JSON.stringify({ category_id: category_id, category_name: category_name })})`
+						`/pages/product/list?type=goods&search=${category_name}`)
 				}else{
 					this.$wanlshop.to(
 						`/pages/shop/product/list?shop_id=${this.shopId}&category_id=${category_id}&category_name=${category_name}`

@@ -16,8 +16,9 @@
 						scroll-with-animation
 						:scroll-left="scrollLeft"
 					>
+				
 						<view class="scroll__item" v-for="(item, index) in common.modulesData.categoryModules" :key="item.id" :class="{ action: currentItemId === 'cid' + item.id }" @tap="handleSelect('cid' + item.id, index)" >
-							{{ item.name }}
+							{{ item.name }} 
 						</view>
 					</scroll-view>
 					<!-- <view class="category flex align-center" @tap="handleModal">
@@ -99,7 +100,7 @@ export default {
 			headHeight: 44,
 			windowHeight: 0,
 			headTop: 0,
-			currentItemId: 'cid163',
+			currentItemId: 'cid1',
 			currentData: {},
 			scrollLeft: 0,
 			isModal: false,

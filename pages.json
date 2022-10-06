@@ -1003,6 +1003,46 @@
 					}
 				},
 				{
+					"path": "money/bank-recharge",
+					"style": {
+						"navigationBarTitleText": "充值",
+						"app-plus": {
+							"titleNView": {
+								"type": "float",
+								"backgroundColor": "",
+								"blurEffect": "light"
+							}
+						},
+						"h5": {
+							"titleNView": {
+								"backgroundColor": "#ffffff"
+							}
+						},
+						"backgroundColorTop": "#ffffff", //顶部窗口的背景色
+						"backgroundColorBottom": "#ffffff" //底部窗口的背景色
+					}
+				},
+				{
+					"path": "money/usdt-recharge",
+					"style": {
+						"navigationBarTitleText": "充值",
+						"app-plus": {
+							"titleNView": {
+								"type": "float",
+								"backgroundColor": "",
+								"blurEffect": "light"
+							}
+						},
+						"h5": {
+							"titleNView": {
+								"backgroundColor": "#ffffff"
+							}
+						},
+						"backgroundColorTop": "#ffffff", //顶部窗口的背景色
+						"backgroundColorBottom": "#ffffff" //底部窗口的背景色
+					}
+				},
+				{
 					"path": "money/withdraw",
 					"style": {
 						"navigationBarTitleText": "提现",

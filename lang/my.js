@@ -87,6 +87,8 @@ export default {
 		"function_of_direct": "Fungsi Langsung",
 		"empty": "Tiada apa-apa Dijumpai",
 		"info": "maklumat",
+		"bank_recharge": 'Caj Semula Bank',
+		"usdt_recharge": 'Caj semula USDT'
 	},
 	//拼团
 	groups: {
@@ -440,6 +442,17 @@ export default {
 		"oa_pay": "Pembayaran Akaun Rasmi",
 		"oa_pay_text": "Adalah disyorkan untuk menggunakan akaun rasmi untuk membayar",
 		"ail_pay": "Alipay",
+		"union_pay": 'UnionPay',
+		"union_pay_text": 'UnionPay(UnionPay) untuk mengecas semula, sila hubungi setiausaha perkhidmatan pelanggan untuk mengendalikan perniagaan!',
+		"upload_voucher": 'Klik untuk memuat naik baucar pembayaran',
+		"confirm_transfer": 'Sahkan pemindahan',
+		"under_review": 'ditinjau',
+		"usdt_pay": 'USDT',
+		"payment_tip_title": 'Petua yang baik:',
+		"payment_tip_1": '1.Sila hubungi setiausaha perkhidmatan pelanggan untuk mengendalikan perniagaan caj semula bagi memastikan baki akaun dicapai tepat pada masanya!',
+		"payment_tip_2": '2.Selepas melengkapkan caj semula, sila serahkan peta butiran akaun; adalah mudah untuk kakitangan mengesahkan jumlah akaun!',
+		"payment_tip_3": '3.Selepas 21:00 malam; serahkan caj semula; ia akan ditangguhkan sehingga 9:00-10:00 pagi keesokan harinya untuk mencapai baki akaun!',
+		"payment_tip_4": '4.Jika anda menghadapi masalah, sila rujuk setiausaha perkhidmatan pelanggan tepat pada masanya untuk menangani masalah berkaitan untuk anda!',
 		"wechat_pay": "WeChat Pay",
 		"wechat_pay_text": "Pembayaran WeChat disyorkan",
 		"baidu_pay": "Juruwang Baidu",

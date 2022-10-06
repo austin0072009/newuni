@@ -87,6 +87,8 @@ export default {
 		"function_of_direct": "Chức năng trực tiếp ",
 		"empty": "Không tìm thấy thứ gì",
 		"info": "thông tin",
+		"bank_recharge": 'Nạp tiền vào ngân hàng',
+		"usdt_recharge": 'Nạp tiền USDT'
 	},
 	//拼团
 	groups: {
@@ -440,6 +442,17 @@ export default {
 		"oa_pay": "Thanh toán Tài khoản Chính thức ",
 		"oa_pay_text": "Nên sử dụng tài khoản chính thức để thanh toán ",
 		"ail_pay": "Alipay ",
+		"union_pay": 'UnionPay',
+		"union_pay_text": 'UnionPay（UnionPay) nạp tiền, vui lòng liên hệ với thư ký dịch vụ khách hàng để kinh doanh！',
+		"upload_voucher": 'Nhấp để tải lên chứng từ thanh toán',
+		"confirm_transfer": 'Xác nhận chuyển khoản',
+		"under_review": 'đang xem xét',
+		"usdt_pay": 'USDT',
+		"payment_tip_title": 'Lời khuyên tử tế:',
+		"payment_tip_1": '1.Vui lòng liên hệ với thư ký dịch vụ khách hàng để xử lý nghiệp vụ nạp tiền để đảm bảo rằng số dư tài khoản được đến kịp thời!',
+		"payment_tip_2": '2.Sau khi nạp tiền xong, vui lòng nộp bản đồ chi tiết tài khoản, nhân viên xác nhận số tiền trong tài khoản rất tiện lợi!',
+		"payment_tip_3": '3.Sau 21:00 tối, hãy gửi tiền nạp tiền; sẽ bị trì hoãn đến 9: 00-10: 00 sáng ngày hôm sau để đến số dư tài khoản!',
+		"payment_tip_4": '4.Nếu bạn gặp sự cố, hãy tham khảo ý kiến ​​của thư ký dịch vụ khách hàng để kịp thời giải quyết các vấn đề liên quan cho bạn!',
 		"wechat_pay": "WeChat Pay ",
 		"wechat_pay_text": "Thanh toán WeChat được khuyến khích ",
 		"baidu_pay": "Thu ngân Baidu ",

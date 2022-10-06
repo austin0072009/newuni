@@ -87,6 +87,8 @@ export default {
 		"function_of_direct": "功能直达",
 		"empty": "没有找到任何内容",
 		"info": "消息",
+		"bank_recharge": '银行充值',
+		"usdt_recharge": 'USDT充值'
 	},
 	//拼团
 	groups: {
@@ -440,6 +442,17 @@ export default {
 		"oa_pay": "公众号支付",
 		"oa_pay_text": "推荐使用公众号支付",
 		"ail_pay": "支付宝",
+		"union_pay": 'UnionPay',
+		"union_pay_text": 'UnionPay（银联）充值，请联系客服小秘办理业务！',
+		"upload_voucher": '点击上传支付凭证',
+		"confirm_transfer": '确认转账',
+		"under_review": '审查中',
+		"usdt_pay": 'USDT',
+		"payment_tip_title": '温馨提示:',
+		"payment_tip_1": '1.办理充值业务请联系客服小秘进行办理，确保及时到达账户余额！',
+		"payment_tip_2": '2.完成充值以后，请提交到账详情图；方便工作人员确认到账金额！',
+		"payment_tip_3": '3.下午21:00以后；提交充值；将延迟至第二天上午9:00-10:00到达账户余额！',
+		"payment_tip_4": '4.如果遇到问题，请及时咨询客服小秘为您处理相关问题！',
 		"wechat_pay": "微信支付",
 		"wechat_pay_text": "推荐使用微信支付",
 		"baidu_pay": "百度收银台",

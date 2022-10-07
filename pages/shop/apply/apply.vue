@@ -46,11 +46,11 @@
 				</view>
 			</view>
 			
-			<view class="cu-form-group">
+	<!-- 		<view class="cu-form-group">
 				<view class="title">{{$t('shop_apply.msg36')}}</view>
 				<input name="wechat" v-model="shopdata.wechat" :placeholder="$t('shop_apply.msg52')"></input>
 				<text class='wlIcon-WeChat text-green'></text>
-			</view>
+			</view> -->
 			
 			<view class="cu-form-group">
 				<view class="title">{{$t('shop_apply.msg37')}}</view>
@@ -110,8 +110,8 @@
 					{name: 'number', checkType: 'notnull', errorMsg: this.$t('shop_apply.msg32')+ this.number_text[this.shopdata.state]},
 					{name: 'image', checkType: 'notnull', errorMsg: this.$t('shop_apply.msg51')+ this.image_text[this.shopdata.state]},
 					// {name: 'trademark', checkType: 'notnull', errorMsg: '请上传商标证书'},
-					{name: 'wechat', checkType: 'notnull', errorMsg: this.$t('shop_apply.msg52')},
-					{name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg35')}
+					//{name: 'wechat', checkType: 'notnull', errorMsg: this.$t('shop_apply.msg52')},
+					{name: 'mobile', checkType: 'notnull', errorMsg: this.$t('login.msg35')}
 				];
 				//进行表单检查
 				let formData = e.detail.value;

@@ -102,12 +102,20 @@
 					this.$wanlshop.msg(this.$t('bank.msg7'));
 					return;
 				}
-				var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
-				if(!data.mobile || !myreg.test(data.mobile)){
-					this.$wanlshop.msg(this.$t('bank.msg8'));
-					return;
+				// var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+				// if(!data.mobile || !myreg.test(data.mobile)){
+				// 	this.$wanlshop.msg(this.$t('bank.msg8'));
+				// 	return;
+				// }
+				
+				if(!data.mobile){
+					
+						this.$wanlshop.msg(this.$t('bank.msg8'));
+						return;
 				}
 				console.log(data);
+				
+				
 				this.$wanlshop.prePage().refreshList(data);
 				this.$wanlshop.back(1);
 			},

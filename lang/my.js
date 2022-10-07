@@ -537,6 +537,7 @@ export default {
 		"msg1": "sila pilih",
 		"title2": "Akaun bank",
 		"msg2": "Isikan kad bank / akaun WeChat Alipay",
+		"title21":"TRX address",
 		"title3": "pemegang kad nama",
 		"msg3": "Nama Pemegang Akaun",
 		"title4": "Nombor telefon bimbit",

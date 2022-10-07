@@ -15,10 +15,16 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group">
+		<view class="cu-form-group" v-if="this.bankData.bankCode == 'VM' ">
 			<view class="title">{{$t('bank.title2')}}</view>
 			<input type="text" :placeholder="$t('bank.msg2')" v-model="bankData.cardCode"/>
 		</view>
+		<view class="cu-form-group" v-if="this.bankData.bankCode == 'TRON' ">
+			<view class="title">{{$t('bank.title21')}}</view>
+			<input type="text" :placeholder="$t('bank.msg2')" v-model="bankData.cardCode"/>
+		</view>
+		
+		
 		<view class="cu-form-group">
 			<view class="title">{{$t('bank.title3')}}</view>
 			<input type="text" maxlength="4" :placeholder="$t('bank.msg3')" v-model="bankData.username"/>
@@ -46,22 +52,24 @@
 				},
 				index: -1,
 				bankList: [
-					{bankCode: 'ALIPAY', bankName: '支付宝账户'},
-					{bankCode: 'WECHAT', bankName: '微信账户'},
-					{bankCode: 'ICBC', bankName: '工商银行'},
-					{bankCode: 'ABC', bankName: '农业银行'},
-					{bankCode: 'PSBC', bankName: '邮储银行'},
-					{bankCode: 'CCB', bankName: '建设银行'},
-					{bankCode: 'CMB', bankName: '招商银行'},
-					{bankCode: 'BOC', bankName: '中国银行'},
-					{bankCode: 'COMM', bankName: '交通银行'},
-					{bankCode: 'SPDB', bankName: '浦发银行'},
-					{bankCode: 'GDB', bankName: '广发银行'},
-					{bankCode: 'CMBC', bankName: '民生银行'},
-					{bankCode: 'PAB', bankName: '平安银行'},
-					{bankCode: 'CEB', bankName: '光大银行'},
-					{bankCode: 'CIB', bankName: '兴业银行'},
-					{bankCode: 'CITIC', bankName: '中信银行'}
+					// {bankCode: 'ALIPAY', bankName: '支付宝账户'},
+					// {bankCode: 'WECHAT', bankName: '微信账户'},
+					// {bankCode: 'ICBC', bankName: '工商银行'},
+					// {bankCode: 'ABC', bankName: '农业银行'},
+					// {bankCode: 'PSBC', bankName: '邮储银行'},
+					// {bankCode: 'CCB', bankName: '建设银行'},
+					// {bankCode: 'CMB', bankName: '招商银行'},
+					// {bankCode: 'BOC', bankName: '中国银行'},
+					// {bankCode: 'COMM', bankName: '交通银行'},
+					// {bankCode: 'SPDB', bankName: '浦发银行'},
+					// {bankCode: 'GDB', bankName: '广发银行'},
+					// {bankCode: 'CMBC', bankName: '民生银行'},
+					// {bankCode: 'PAB', bankName: '平安银行'},
+					// {bankCode: 'CEB', bankName: '光大银行'},
+					// {bankCode: 'CIB', bankName: '兴业银行'},
+					// {bankCode: 'CITIC', bankName: '中信银行'}
+					{bankCode: 'VM', bankName: 'Visa/Master'},
+					{bankCode: 'TRON', bankName: 'USDT-TRC20'}
 				]
 			}
 		},

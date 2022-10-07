@@ -537,6 +537,7 @@ export default {
 		"msg1": "pakipili nalang",
 		"title2": "Bank account",
 		"msg2": "Punan ang bank card / Alipay WeChat account",
+		"title21":"TRX address",
 		"title3": "pangalan ng cardholder",
 		"msg3": "Pangalan ng may hawak ng account",
 		"title4": "numero ng cellphone",

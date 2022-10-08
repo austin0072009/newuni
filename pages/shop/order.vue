@@ -59,7 +59,14 @@
 							<view>{{$t('order.real_payment')}}：<text class="text-price">{{ order.pay.price }}</text></view>
 							<view style="margin-left: 0.5rem;">{{$t('other.msg23')}}：<text class="text-price">{{ order.total_ghs_price }}</text></view>
 						</view>
-						<!-- <view class="action-box padding-bottom-bj" v-if="order.state == 1">
+						<view class="action-box padding-bottom-bj" >
+											
+												<button class="cu-btn round line-black" @tap="onLogistics(order.id)">{{$t('order.check_the_logistics')}}</button>
+									<!-- 		<button class="cu-btn round line-black" @tap="cancelOrder(order)">{{$t('order.cancel_the_order')}}</button> -->
+											
+										</view>
+						
+		<!-- 				<view class="action-box padding-bottom-bj" v-if="order.state == 1">
 							<button class="cu-btn round line-black margin-lr-bj" @tap="editAddress(order.id)">{{$t('order.edit_address')}}</button>
 							<button class="cu-btn round line-black" @tap="cancelOrder(order)">{{$t('order.cancel_the_order')}}</button>
 							<button class="cu-btn round margin-lr-bj wanl-bg-orange" @tap="paymentOrder(order.id)">{{$t('order.payment')}}</button>

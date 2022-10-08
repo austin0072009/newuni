@@ -46,11 +46,7 @@
 			},
 			currentItemId: {
 				type: String,
-				default: "1"
-			},
-			flag:{
-				type: Number,
-				default:0
+				default: ""
 			}
 		},
 		data(){
@@ -65,12 +61,9 @@
 				}
 			}
 		},
-
 		mounted() {
-			if(this.flag == 0 ){
+			if(this.cid == '1'){
 				this.loadData();
-				 console.log(11111111);
-				 flag++;
 			}
 		},
 		methods:{
@@ -97,8 +90,6 @@
 			}
 		}
 	}
-	
-	
 </script>
 
 <style lang="scss" scoped>

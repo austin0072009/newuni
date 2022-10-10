@@ -5,7 +5,7 @@
 				<image src="../../../static/images/logo2.png"></image>
 				<view class="wanl-login">{{$t('login.msg')}}</view>
 			</view>
-			<view class="form">
+			<view class="form" >
 				<view class="item">
 					<form @submit="formSubmit">
 						<view class="u-tabs__wrapper__nav">
@@ -13,7 +13,11 @@
 							<view class="scroll__item" :class="{'active' : !phone}" @tap="changeEmail">{{ $t('login.email') }}</view>
 						</view>
 						
-						<view class="input" v-if="phone">
+		
+						<view class="input" v-if="phone" style="justify-content: space-around;">
+							<picker @change="bindPickerChange" :value="index" :range="array">
+									<view class="uni-input">{{array[index]}}</view>
+							</picker>
 							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="mobile" type="text" maxlength="16"
 							 confirm-type="next" @input="onKeyInput" v-model="mobile"></input>
 						</view>
@@ -65,8 +69,12 @@ export default {
 			mobile: '',
 			checked: 0,
 			phone: true,
+			phoneRegion: '+86',
+			  array: ['中国 +86', '美国 +1', '马来西亚 +60', '印度尼西亚 +62', '菲律宾 +63', '新加坡 +65 ','泰国 +66', '东帝汶 +670', '文莱 +673','台湾 +886', '缅甸 +95'],
+			            index: 0,
 		};
 	},
+
 	onLoad(options) {
 		this.pageroute = options.url;
 		if (options.mobile) {
@@ -75,6 +83,13 @@ export default {
 		}
 	},
 	methods: {
+		    bindPickerChange: function(e) {
+            console.log('picker发送选择改变，携带值为', e.detail.value)
+            this.index = e.detail.value
+			var number = this.array[e.detail.value].trim().split(" ");
+			console.log(number[1]);
+			this.phoneRegion = number[1];
+        },
 		changeEmail() {
 			this.phone = !this.phone
 		},
@@ -87,20 +102,21 @@ export default {
 		formSubmit: function(e) {
 			if(this.checked == 2){
 				//定义表单规则
-				var rule = [
-					{ name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg35') }
-				];
+				// var rule = [
+				// 	{ name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg35') }
+				// ];
 				//进行表单检查
 				var formData = e.detail.value;
-				var checkRes = graceChecker.check(formData, rule);
+				// var checkRes = graceChecker.check(formData, rule);
+				var checkRes = 1;
 				if (checkRes) {
 					this.$api.get({
 						url: '/wanlshop/validate/check_mobile_available',
 						data: {
-							mobile: this.mobile
+							mobile: (this.phoneRegion + this.mobile)
 						},
 						success: res => {
-							this.$wanlshop.to(`validcode?event=register&mobile=${e.detail.value.mobile}&url=${this.pageroute}`,'slide-in-bottom',200);
+							this.$wanlshop.to(`validcode?event=register&mobile=${(this.phoneRegion + this.mobile)}&url=${this.pageroute}`,'slide-in-bottom',200);
 						},
 						fail: res => {
 							uni.showModal({
@@ -108,7 +124,7 @@ export default {
 							    content: this.$t('login.msg37'),
 							    success: (msg)=> {
 							        if (msg.confirm) {
-							           this.$wanlshop.to(`phone?mobile=${e.detail.value.mobile}&url=${this.pageroute}`,'slide-in-bottom',200);
+							           this.$wanlshop.to(`phone?mobile=${(this.phoneRegion + this.mobile)}&url=${this.pageroute}`,'slide-in-bottom',200);
 							        } else if (msg.cancel) {
 							            console.log('用户点击取消');
 							        }

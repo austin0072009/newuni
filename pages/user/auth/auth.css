@@ -191,7 +191,7 @@ page {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	z-index: 1024;
+	z-index: 0;
 	padding: 0 60rpx;
 	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
 }

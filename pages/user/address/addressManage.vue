@@ -10,10 +10,10 @@
 			<view class="title">{{$t('address.title2')}}</view>
 			<input type="number" :placeholder="$t('address.msg2')" maxlength="11" v-model="addressData.mobile"></input>
 		</view>
-		<view class="cu-form-group">
+	<!-- 	<view class="cu-form-group">
 			<view class="title">{{$t('address.title3')}}</view>
 			<input type="text" @tap="btnClick" :value="addressData.formatted_address" :placeholder="$t('address.msg3')" disabled />
-		</view>
+		</view> -->
 		<view class="cu-form-group align-start">
 			<view class="title">{{$t('address.title4')}}</view>
 			<textarea maxlength="-1" @input="getInputtips" @focus="focusInputtips" @confirm="confirmInputtips" @blur="blurInputtips"
@@ -162,14 +162,18 @@
 					this.$wanlshop.msg(this.$t('address.msg7'));
 					return;
 				}
-				if (!/^1[0-9]{10,10}$/.test(data.mobile)) { // 1.0.2升级
+				// if (!/^1[0-9]{10,10}$/.test(data.mobile)) { // 1.0.2升级
+				// 	this.$wanlshop.msg(this.$t('address.msg8'));
+				// 	return;
+				// }
+				if (!data.mobile) { // 1.0.2升级
 					this.$wanlshop.msg(this.$t('address.msg8'));
 					return;
 				}
-				if (!data.city) {
-					this.$wanlshop.msg(this.$t('address.msg9'));
-					return;
-				}
+				// if (!data.city) {
+				// 	this.$wanlshop.msg(this.$t('address.msg9'));
+				// 	return;
+				// }
 				if (!data.address) {
 					this.$wanlshop.msg(this.$t('address.msg10'));
 					return;

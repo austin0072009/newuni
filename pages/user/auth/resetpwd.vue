@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="auth" style="padding: 20rpx;">
-			<view class="wanl-title">{{$t('address.msg12')}}{{username}}{{$t('login.msg38')}}</view> 
+			<view class="wanl-title">{{$t('address.msg12')}} {{$t('login.msg38')}}</view> 
 			<form @submit="formSubmit">
 				<view class="auth-group radius-bock bg-gray wlian-grey-light">
 					<input confirm-type="done" :placeholder="$t('login.msg39')" password type="text" placeholder-class="placeholder" name="newpassword" @input="onKeyInput" ></input>
@@ -38,7 +38,7 @@ export default {
 			//将下列代码加入到对应的检查位置
 			//定义表单规则
 			var rule = [
-				{ name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg40') },
+				// { name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg40') },
 				{ name: "captcha", checkType: "zipcode", errorMsg: this.$t('login.msg41') },
 				{ name: "newpassword", checkType: "string", checkRule: "6,12", errorMsg: this.$t('login.msg42') }
 			];

@@ -569,7 +569,7 @@ export default {
 		msg9: 'Please select region',
 		msg10: 'Please fill in the details',
 		msg11: 'address',
-		msg12: 'editor',
+		msg12: 'change',
 		msg13: 'add',
 		msg14: 'successful'
 	},

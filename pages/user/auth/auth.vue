@@ -14,9 +14,12 @@
 							<view class="scroll__item" :class="{'active' : !phone}" @tap="changeEmail">{{ $t('login.email') }}</view>
 						</view>
 						
-						<view class="input" v-if="phone">
+						<view class="input" v-if="phone" style="justify-content: space-around;">
+							<picker @change="bindPickerChange" :value="index" :range="array">
+									<view class="uni-input">{{array[index]}}</view>
+							</picker>
 							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
-							 confirm-type="next" @input="onKeyInput"></input>
+							 confirm-type="next" @input="onKeyInput" v-model="account"></input>
 						</view>
 						<view class="input" v-else>
 							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="16" confirm-type="next" @input="onKeyInput"></input>
@@ -77,7 +80,11 @@
 				checked: 0,
 				scrollLeft: 0,
 				phone: true,
-				showPassword: false
+				account: '',
+				showPassword: false,
+				phoneRegion: '+86',
+				  array: ['CN +86', 'US +1', 'MY +60', 'ID +62', 'PH +63', 'SG +65 ','TH +66',  'BN +673','TW +886', 'MM +95'],
+				            index: 0,
 			};
 		},
 		onLoad(option) {
@@ -193,6 +200,13 @@
 			// #endif
 		},
 		methods: {
+			bindPickerChange: function(e) {
+			    console.log('picker发送选择改变，携带值为', e.detail.value)
+			    this.index = e.detail.value
+				var number = this.array[e.detail.value].trim().split("+");
+				console.log(number[1]);
+				this.phoneRegion = number[1];
+			},
 			changeEmail() {
 				this.phone = !this.phone
 			},
@@ -291,23 +305,26 @@
 				if(this.checked == 2){
 					//将下列代码加入到对应的检查位置
 					//定义表单规则
-					let rule = [{
-						name: 'account',
-						checkType: 'phoneno',
-						errorMsg: this.$t('login.msg10')
-					}];
+					let rule = [
+					// 	{
+					// 	name: 'account',
+					// 	checkType: 'phoneno',
+					// 	errorMsg: this.$t('login.msg10')
+					// },
+					];
 					//进行表单检查
 					let formData = e.detail.value;
 					let checkRes = graceChecker.check(formData, rule);
 					// ..检查是否注册-没注册跳转注册
+					
 					if (checkRes) {
 						this.$api.get({
 							url: '/wanlshop/validate/check_mobile_exist',
 							data: {
-								mobile: formData.account
+								mobile: (this.phoneRegion + this.account)
 							},
 							success: res => {
-								this.$wanlshop.to(`phone?mobile=${formData.account}&url=${this.pageroute}`,'none');
+								this.$wanlshop.to(`phone?mobile=${this.phoneRegion + this.account}&url=${this.pageroute}`,'none');
 							},
 							fail: res => {
 								uni.showModal({
@@ -315,7 +332,7 @@
 									content: this.$t('login.msg11'),
 									success: (res) => {
 										if (res.confirm) {
-											this.$wanlshop.to(`register?mobile=${formData.account}&url=${this.pageroute}`);
+											this.$wanlshop.to(`register?mobile=${this.phoneRegion + this.account}&url=${this.pageroute}`);
 										} else if (res.cancel) {
 											console.log('取消');
 										}

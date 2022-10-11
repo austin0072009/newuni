@@ -70,7 +70,7 @@ export default {
 			checked: 0,
 			phone: true,
 			phoneRegion: '+86',
-			  array: ['中国 +86', '美国 +1', '马来西亚 +60', '印度尼西亚 +62', '菲律宾 +63', '新加坡 +65 ','泰国 +66', '东帝汶 +670', '文莱 +673','台湾 +886', '缅甸 +95'],
+			  array: ['CN +86', 'US +1', 'MY +60', 'ID +62', 'PH +63', 'SG +65 ','TH +66',  'BN +673','TW +886', 'MM +95'],
 			            index: 0,
 		};
 	},
@@ -86,7 +86,7 @@ export default {
 		    bindPickerChange: function(e) {
             console.log('picker发送选择改变，携带值为', e.detail.value)
             this.index = e.detail.value
-			var number = this.array[e.detail.value].trim().split(" ");
+			var number = this.array[e.detail.value].trim().split("+");
 			console.log(number[1]);
 			this.phoneRegion = number[1];
         },

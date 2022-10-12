@@ -85,15 +85,15 @@
             }
             
         }
-        ,{
-            "path" : "pages/shoplist",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+        // ,{
+        //     "path" : "pages/shoplist",
+        //     "style" :                                                                                    
+        //     {
+        //         "navigationBarTitleText": "",
+        //         "enablePullDownRefresh": false
+        //     }
             
-        }
+        // }
         ,{
             "path" : "components/wanl-shop/list",
             "style" :                                                                                    
@@ -1794,12 +1794,12 @@
 				"selectedIconPath": "static/images/tabbar/cartHL.png",
 				"text": "购物车"
 			},
-			{
-				"pagePath": "pages/shoplist",
-				"iconPath": "static/images/tabbar/shop.png",
-				"selectedIconPath": "static/images/tabbar/shopHL.png",
-				"text": "发现"
-			},
+			// {
+			// 	"pagePath": "pages/shoplist",
+			// 	"iconPath": "static/images/tabbar/shop.png",
+			// 	"selectedIconPath": "static/images/tabbar/shopHL.png",
+			// 	"text": "发现"
+			// },
 			{
 				"pagePath": "pages/user",
 				"iconPath": "static/images/tabbar/user.png",

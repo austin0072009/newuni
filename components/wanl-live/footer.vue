@@ -28,12 +28,12 @@
 		</view>
 		<!-- #endif -->
 		<!-- <view class="wanl-live-footer-bottom_controll"> </view> -->
-		<view class="wanl-live-footer-bottom_goods" @tap="onPopup">
+		<!-- <view class="wanl-live-footer-bottom_goods" @tap="onPopup">
 			<image class="wanl-live-footer-bottom_goods-btn" src="/static/images/live/shop.png" mode=""></image>
 			<view class="wanl-live-footer-bottom_goods-tag" v-if="goods.length != 0">
 				<text class="wanl-live-footer-bottom_goods-tag-text">{{numFormat(goods.length)}}</text>
 			</view>
-		</view>
+		</view> -->
 		<!-- 发送点赞 -->
 		<view class="wanl-live-footer-bottom_praise" @tap="sendLive('like')" v-if="state == 1">
 			<image class="wanl-live-footer-bottom_praise-btn" src="/static/images/live/like.png" mode=""></image>

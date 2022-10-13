@@ -54,7 +54,7 @@
 					<view class="cu-tag round bg-orange light" >{{ item.name }}{{$t('gg.msg15')}}</view>
 				</view>
 				<view class="action" v-if="item.shopname != null">
-					<view class="cu-tag round bg-orange light">{{ item.shopname }} shop</view>
+					<view class="cu-tag round bg-orange light">{{ item.shopname }} {{$t('gg.msg15')}}</view>
 				</view>
 			</view>
 			

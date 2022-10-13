@@ -16,42 +16,41 @@
 		</view>
 		<!-- 主体内容 -->
 		<view class="wanlshop-shop-container__main">
-			<swiper class="page"
+		<!-- 	<swiper class="page"
 				v-show="tabbarId === 'home'"
 				:current-item-id="headTabbarId" 
 				:style="{ height: `${sys.mainHeight}px`}"
 				@change="changeCurrent"
 				@animationfinish="animationFinish">
-				<!-- 主页 -->
+				
 				<swiper-item item-id="page"> 
 					<wanl-shop-page :windowHeight="sys.mainHeight" :pageModules="shopData.page" :shopData="shopData" @handleHandleFollow="handleFollow"/>
 				</swiper-item>
-				<!-- 新品 -->
+				
 				<swiper-item item-id="news">
 					<wanl-shop-product :windowHeight="sys.mainHeight" :tabbarHeight="sys.tabbarHeight" :tabId="headTabbarId" :option="{shop_id: shopData.id}"/>
 				</swiper-item>
-				<!-- 拼团 -->
 				<swiper-item item-id="groups">
 				    <wanl-shop-product :windowHeight="sys.mainHeight" :tabbarHeight="sys.tabbarHeight" :tabId="headTabbarId" :option="{shop_id: shopData.id}"/>
 				</swiper-item>
-			</swiper>
+			</swiper> -->
 			<!-- 全部宝贝 -->
 			<wanl-shop-product v-if="tabbarId === 'goods'" class="goods" :windowHeight="sys.mainHeight" :tabbarHeight="sys.tabbarHeight" :tabId="tabbarId" :option="{shop_id: shopData.id}"/>
 			<!-- 发现 -->
-			<wanl-shop-find  
+			<!-- <wanl-shop-find  
 				v-if="tabbarId === 'find'" 
 				class="find" 
 				:windowHeight="sys.mainHeight" 
 				:tabbarHeight="sys.tabbarHeight" 
 				:userNo="shopData.find_user.user_no"
-			/>
+			/> -->
 			<!-- 分类 -->
 			<wanl-shop-classify v-if="tabbarId === 'classify'" class="classify" :shopId="shopData.id" :mainHeight="sys.mainHeight" :categoryStyle="shopData.categoryStyle === 0 ? 1 : shopData.categoryStyle" :categoryData="shopData.category" />
 		</view>
 		<!-- 底部导航 -->
 		<view class="wanlshop-shop-container__tabbar" :style="{ height: `${sys.tabbarHeight}px`, paddingBottom:`${sys.tabbarBottom}px` }">
 			<view class="cu-bar tabbar">
-				<view class="action" @tap="handleTabbar('home')">
+				<!-- <view class="action" @tap="handleTabbar('home')">
 					<view v-if="handleActive('home')">
 						<view class="cu-avatar round" :style="{backgroundImage: `url(${$wanlshop.oss(shopData.avatar, 32, 32)})`}" />
 					</view>
@@ -59,15 +58,15 @@
 						<view class="wlIcon-dianpu text-bold"></view>
 						<view>{{$t('shop.index')}}</view>
 					</view>
-				</view>
+				</view> -->
 				<view class="action" :class="{ active: handleActive('goods') }" @tap="handleTabbar('goods')">
 					<view class="wlIcon-baobei text-bold"></view>
 					<view>{{$t('shop.msg1')}}</view>
 				</view>
-				<view class="action" :class="{ active: handleActive('find') }" @tap="handleTabbar('find')">
+			<!-- 	<view class="action" :class="{ active: handleActive('find') }" @tap="handleTabbar('find')">
 					<view class="wlIcon-guanzhu1 text-bold"></view>
 					<view>{{$t('shop.msg2')}}</view>
-				</view>
+				</view> -->
 				<view class="action" :class="{ active: handleActive('classify') }" @tap="handleTabbar('classify')">
 					<view class="wlIcon-fenlei1 text-bold"></view>
 					<view>{{$t('shop.msg3')}}</view>
@@ -97,8 +96,8 @@
 	export default {
 	    data() {
 	        return {
-				tabbarId: 'home',
-				headTabbarId: 'page',
+				tabbarId: 'goods',
+				headTabbarId: 'goods',
 				sys: {
 					headTop: 0,
 					headHeight: 0,

@@ -46,14 +46,19 @@
 					<text class="text-sm">{{ item.keywords }}</text>
 				</view>
 			</view>
-			<view class="cu-item arrow" v-for="(item, index) in search.categoryList" :key="item.id" @tap="categoryToList(item.id, item.name)" v-if="searchType !== 'find'">
+			<view class="cu-item arrow" v-for="(item, index) in search.categoryList" :key="item.id" @tap="categoryToList(item.id, item.name,item.pid)" v-if="searchType !== 'find'">
 				<view class="content">
 					<text class="text-sm text-gray">{{ item.name }}</text>
 				</view>
-				<view class="action">
-					<view class="cu-tag round bg-orange light">{{ item.name }}{{$t('gg.msg15')}}</view>
+				<view class="action" v-if="item.name != null">
+					<view class="cu-tag round bg-orange light" >{{ item.name }}{{$t('gg.msg15')}}</view>
+				</view>
+				<view class="action" v-if="item.shopname != null">
+					<view class="cu-tag round bg-orange light">{{ item.shopname }} shop</view>
 				</view>
 			</view>
+			
+			
 		</view>
 	</view>
 </template>
@@ -63,6 +68,7 @@ export default {
 	data() {
 		return {
 			searchType: 'goods',
+			
 			searchTypeText: {
 				goods: this.$t('gg.msg16'),
 				groups: this.$t('gg.msg17'),
@@ -74,7 +80,8 @@ export default {
 			historyList: [], //历史记录列表
 			search: {
 				categoryList: {},
-				searchList: {}
+				searchList: {},
+				shopList:{}
 			}
 		};
 	},
@@ -101,6 +108,38 @@ export default {
 				data: { search: val },
 				success: res => {
 					this.search = res;
+					
+					this.search.shopList = JSON.parse(JSON.stringify(this.search.shopList).replace(/id/g, "pid"))
+
+					//if(this.search.categoryList.length != 0)
+					{
+						for (var i = 0; i < this.search.shopList.length; i++) {
+							
+							this.search.categoryList.push(this.search.shopList[i])
+							
+						}
+						
+					}
+					
+					
+					// this.search.categoryList.forEach(item =>{
+					// 							this.$set(item,'pid','')
+												
+					// 						})
+					
+					// for (var i = 0; i < this.search.categoryList.length; i++) {
+						
+					// 	if(this.search.categoryList[i]['shopname'] == null)
+					// 	{
+					// 		this.search.categoryList[i]['pid'] = '1'
+					// 	}
+					// 	// this.search.categoryList[i]['pid']=this.search.shopList[i]['id']
+					// 	// this.search.categoryList[i]['shopname']=this.search.shopList[i]['shopname']
+					// }
+					for (var i = 0; i < this.search.categoryList.length; i++) {
+						console.log(this.search.categoryList[i]['pid']+'--------'+this.search.categoryList[i]['shopname'])
+						
+					}
 					if(res.categoryList.length != 0 || res.searchList.length != 0){
 						this.isHistory = false
 					}
@@ -163,7 +202,12 @@ export default {
 				this.$wanlshop.to(`/pages/product/list?type=${this.searchType}&search=${keywords}`);
 			}
 		},
-		categoryToList(category_id, category_name) {
+		categoryToList(category_id, category_name,shop_id) {
+			if(category_name == null)
+			{
+				this.$wanlshop.to(`/pages/shop/index?id=${shop_id}`);
+				return
+			}
 			this.setHistory(category_name);
 			this.$wanlshop.to(`/pages/product/list?type=${this.searchType}&data=${JSON.stringify({ category_id: category_id, category_name: category_name })}`);
 		},

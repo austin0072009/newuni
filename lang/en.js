@@ -44,7 +44,8 @@ export default {
 		copy2: 'Copy failure',
 		msg22: 'skip',
 		msg23: 'Experience immediately',
-		msg24: 'Preload the system...'
+		msg24: 'Preload the system...',
+		msg25: 'Shop'
 	},
     index: {
 		search: 'Search for goods, categories',

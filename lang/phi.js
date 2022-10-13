@@ -45,7 +45,8 @@ export default {
 		"copy2": "Nabigo ang pagkopya",
 		"msg22": "tumalon",
 		"msg23": "Subukan mo ngayon",
-		"msg24": "Sa preloaded system.."
+		"msg24": "Sa preloaded system..",
+		"msg25": "Shop"
 	},
 	// 首页
 	index: {

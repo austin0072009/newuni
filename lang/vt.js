@@ -45,7 +45,8 @@ export default {
 		"copy2": "Sao chép không thành công ",
 		"msg22": "nhảy qua",
 		"msg23": "Thử ngay bây giờ",
-		"msg24": "Trong hệ thống được tải trước .. "
+		"msg24": "Trong hệ thống được tải trước .. ",
+		"msg25":"Shop"
 	},
 	// 首页
 	index: {

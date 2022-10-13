@@ -45,7 +45,8 @@ export default {
 		"copy2": "Salinan gagal",
 		"msg22": "melompat",
 		"msg23": "Cuba sekarang",
-		"msg24": "Dalam sistem pramuat.."
+		"msg24": "Dalam sistem pramuat..",
+		"msg25": "Shop"
 	},
 	// 首页
 	index: {

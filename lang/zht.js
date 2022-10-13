@@ -59,7 +59,7 @@ export default {
 		"browse": "瀏覽量",
 		"tahanan": "主頁",
 		"classification": "分類",
-		"shop": "店鋪街",
+		"shop": "我的",
 		"mycart": "購買車",
 		"manage": "完成",
 		"done": "完成",

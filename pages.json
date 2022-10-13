@@ -1748,7 +1748,8 @@
 	/* 全局页面样式 */
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "新零售商城", // 全局默认标题
+		// "navigationBarTitleText": "新零售商城", // 全局默认标题
+		"navigationBarTitleText": "Shopee", // 全局默认标题
 		"navigationBarBackgroundColor": "#F7F7F7", //导航条颜色
 		"backgroundColor": "#F7F7F7", //页面颜色
 		"backgroundColorTop": "#F7F7F7", //顶部窗口的背景色

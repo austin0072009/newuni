@@ -57,7 +57,7 @@ export default {
 		browse: 'browse',
         tahanan: 'Tahanan',
 		classification: 'Category',
-		shop: 'shop',
+		shop: 'My',
 		mycart: 'My Cart',
 		manage: 'Manage',
 		done: 'Done',

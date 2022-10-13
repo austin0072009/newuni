@@ -59,7 +59,7 @@ export default {
 		"browse": "pageview",
 		"tahanan": "tahanan",
 		"classification": "Pag-uuri",
-		"shop": "Shop Street",
+		"shop": "My",
 		"mycart": "bumili ka ng kotse",
 		"manage": "Tapusin",
 		"done": "Tapusin",

@@ -54,7 +54,7 @@ export default {
 			//将下列代码加入到对应的检查位置
 			//定义表单规则
 			var rule = [
-				{ name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg35') }
+				// { name: 'mobile', checkType: 'phoneno', errorMsg: this.$t('login.msg35') }
 			];
 			//进行表单检查
 			var formData = e.detail.value;

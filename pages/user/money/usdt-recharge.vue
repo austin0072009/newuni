@@ -93,6 +93,53 @@
 					title: this.$t('money.under_review'),
 					duration: 1000,
 				});
+				
+				this.$api.get({
+					url: '/wanlshop/common/uploadData',
+					success: updata => {
+						this.$api.upload({
+							url: updata.uploadurl,
+							filePath: this.url,
+							name: 'file',
+							formData: updata.storage == 'local' ? null : updata.multipart,
+							success: res => {
+								console.log(res);
+								this.$api.post({
+									url: '/wanlshop/user/profile', 
+									data: {avatar: res.fullurl},
+									success: data => {
+										console.log(data);
+										//this.$store.commit('user/setUserInfo', {avatar: data.avatar});
+										this.$api.post({
+											url: '/wanlshop/pay/recharge',
+											data: {
+												type: 'USDT',
+												method: 'USDT',
+												code: null,
+												money: this.amount,
+												url:res.fullurl
+											},
+											
+											success: res => {
+												switch (data.type) {
+												    case 'unionpay':
+														alert('union')
+														break;
+												    case 'usdt':
+												       alert('usdt');
+														break;
+												} 
+											}
+										});
+									}
+								});
+							}
+						});
+					}
+				});
+				
+				
+				
 				setTimeout(function() {
 					uni.reLaunch({
 						url: '/pages/user'

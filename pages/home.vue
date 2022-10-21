@@ -11,13 +11,14 @@
 				:src="$wanlshop.appstc('/common/wanlian4@2x.png')" />
 		</video>
 		<view v-else>
-			<image :style="{ height: windowHeight + 'px', width: '100%' }"
+			<!-- <image class="advert-image" :style="{ position: 'relative' , height: '0px', width: '100%' }"
 				:src="common.adData.openAdverts.media ? $wanlshop.oss(common.adData.openAdverts.media, 414, 0, 2, 'transparent', 'png') : ''"
-				mode="aspectFill" />
+				mode="aspectFill" /> -->
+				<image class="advert-image" :src="$wanlshop.oss(common.adData.openAdverts.media,  1280,1920, 2, 'transparent', 'png')" ></image>
 			<view class="advert-info" :style="{ top: statusBar + 'px' }">{{$t('gg.msg24')}}</view>
 			<view class="advert-btn" @tap="outBtn" :style="{ bottom: statusBar + 'px' }">{{$t('gg.msg22')}} {{ countdown }}</view>
-			<image class="advert-logo" :style="{ top: statusBar + 'px' }"
-				:src="$wanlshop.appstc('/common/wanlian4@2x.png')" mode=""></image>
+		<!-- 	<image class="advert-logo" :style="{ top: statusBar + 'px' }"
+				:src="$wanlshop.appstc('/common/wanlian4@2x.png')" mode=""></image> -->
 		</view>
 	</view>
 </template>
@@ -30,7 +31,7 @@
 			return {
 				windowHeight: 0,
 				statusBar: 0,
-				countdown: 3, // 修改广告倒计时
+				countdown: 11111, // 修改广告倒计时
 				cTimer: null
 			};
 		},
@@ -146,6 +147,12 @@
 		position: relative;
 		width: 100%;
 		overflow: hidden;
+		.advert-image{
+			position: relative !important;
+			width: 100%;
+			height: 900px !important;
+			
+		}
 
 		.advert-info {
 			position: absolute;

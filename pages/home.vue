@@ -31,7 +31,7 @@
 			return {
 				windowHeight: 0,
 				statusBar: 0,
-				countdown: 11111, // 修改广告倒计时
+				countdown: 10, // 修改广告倒计时
 				cTimer: null
 			};
 		},

@@ -16,9 +16,14 @@
 		</view> -->
 		<view class="cu-form-group align-start">
 			<view class="title">{{$t('address.title4')}}</view>
-			<textarea maxlength="-1" @input="getInputtips" @focus="focusInputtips" @confirm="confirmInputtips" @blur="blurInputtips"
+			<!-- <textarea maxlength="-1" @input="getInputtips" @focus="focusInputtips" @confirm="confirmInputtips" @blur="blurInputtips"
 			 :placeholder-style="addressData.adcode==''?'color: #bbb':''" :adjust-position="false" :value="addressData.address?(addressData.address_name+addressData.address):''"
-			 :disabled="addressData.adcode==''?true:false" :placeholder="addressData.adcode==''?$t('address.msg4'):$t('address.msg5')"></textarea>
+			 :disabled="addressData.adcode==''?true:false" :placeholder="addressData.adcode==''?$t('address.msg4'):$t('address.msg5')"></textarea> -->
+			<textarea  @focus="focusInputtips" @confirm="confirmInputtips" @blur="blurInputtips" >
+				
+				
+				
+			</textarea>
 		</view>
 		<view class="cu-form-group margin-top-bj" v-show="addressType">
 			<view class="title">{{$t('address.title5')}}</view>
@@ -178,7 +183,7 @@
 					this.$wanlshop.msg(this.$t('address.msg10'));
 					return;
 				}
-				this.$wanlshop.prePage().refreshList(data, this.manageType);
+				 this.$wanlshop.prePage().refreshList(data, this.manageType);
 				this.$wanlshop.msg(this.$t('address.msg11') + (this.manageType=='edit' ? this.$t('address.msg12') : this.$t('address.msg13')) + this.$t('address.msg14'));
 				this.$wanlshop.back(1);
 			}

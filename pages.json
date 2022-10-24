@@ -434,6 +434,24 @@
 					}
 				},
 				{
+					"path": "auth/emailcode",
+					"style": {
+						"navigationBarTitleText": " ",
+						"navigationBarBackgroundColor": "#ffffff",
+						"backgroundColorTop": "#ffffff", //顶部窗口的背景色
+						"backgroundColorBottom": "#ffffff" //底部窗口的背景色
+					}
+				},
+				{
+					"path": "auth/email",
+					"style": {
+						"navigationBarTitleText": " ",
+						"navigationBarBackgroundColor": "#ffffff",
+						"backgroundColorTop": "#ffffff", //顶部窗口的背景色
+						"backgroundColorBottom": "#ffffff" //底部窗口的背景色
+					}
+				},
+				{
 					"path": "auth/resetpwd",
 					"style": {
 						"navigationBarTitleText": " ",

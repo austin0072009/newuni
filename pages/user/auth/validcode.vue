@@ -124,6 +124,7 @@ export default {
 				this.$api.post({
 				    url: '/wanlshop/user/register', 
 					data:{
+						email: '',
 						mobile: this.mobile,
 						captcha: this.code.join(""),
 						client_id: uni.getStorageSync("wanlshop:chat_client_id")?uni.getStorageSync("wanlshop:chat_client_id") : null

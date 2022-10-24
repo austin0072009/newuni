@@ -32,7 +32,7 @@
 				<text>{{ $t('money.upload_voucher')}}</text>
 			</view>
 		</view>
-		<button class="confirm_btn" @tap="confirm()" :loading="loading"> {{$t('money.confirm_transfer')}}</button>
+		<button class="confirm_btn" @tap="confirm()" > {{$t('money.confirm_transfer')}}</button>
 		<view class="tips_mode">
 			<view class="tips_content">
 				<view class="tips_title">

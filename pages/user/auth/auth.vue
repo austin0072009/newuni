@@ -18,11 +18,10 @@
 							<picker @change="bindPickerChange" :value="index" :range="array">
 									<view class="uni-input">{{array[index]}}</view>
 							</picker>
-							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16"
-							 confirm-type="next" @input="onKeyInput" v-model="account"></input>
+							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16" confirm-type="next" @input="onKeyInput" v-model="account"></input>
 						</view>
 						<view class="input" v-else>
-							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="16" confirm-type="next" @input="onKeyInput"></input>
+							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="32" confirm-type="next" @input="onKeyInput" v-model="email"></input>
 						</view>
 						<!-- <view class="uni-form-item uni-column input"> -->
 							<!-- <input :password="showPassword" :placeholder="$t('login.msg16')" class="uni-input" password type="text"/> -->
@@ -80,6 +79,8 @@
 				checked: 0,
 				scrollLeft: 0,
 				phone: true,
+				email:'',
+				check:1,
 				account: '',
 				showPassword: false,
 				phoneRegion: '+86',
@@ -208,6 +209,17 @@
 				this.phoneRegion = number[1];
 			},
 			changeEmail() {
+				this.account="";
+				this.email="";
+				if(this.check == 1)
+				{
+								 console.log('切换到邮箱')
+								 this.check = 2;
+				}else
+				{
+								 console.log('切换到手机')
+								 this.check = 1;
+				}
 				this.phone = !this.phone
 			},
 			CheckboxChange(e) {
@@ -302,6 +314,41 @@
 			},
 			// 账户登录
 			formSubmit(e) {
+				
+				if(this.check == 1 && this.account == '')
+				{
+								uni.showModal({
+								    title: this.$t('提示'),
+								    content: this.$t('请填写手机号'),
+								    success: (msg)=> {
+								        if (msg.confirm) {
+								           console.log('请填写手机号')
+								        } else if (msg.cancel) {
+								            console.log('用户点击取消');
+								        }
+								    }
+								});
+								 
+								return
+								
+				}
+				if(this.check == 2 && this.email == '')
+				{
+					uni.showModal({
+					    title: this.$t('提示'),
+					    content: this.$t('请填写邮箱号'),
+					    success: (msg)=> {
+					        if (msg.confirm) {
+					           console.log('请填写手机号')
+					        } else if (msg.cancel) {
+					            console.log('用户点击取消');
+					        }
+					    }
+					});
+								 console.log('请填写邮箱号')
+								 return
+							
+				}
 				if(this.checked == 2){
 					//将下列代码加入到对应的检查位置
 					//定义表单规则
@@ -318,6 +365,32 @@
 					// ..检查是否注册-没注册跳转注册
 					
 					if (checkRes) {
+						if(this.email != '')
+						{
+							this.$api.get({
+								url: '/wanlshop/validate/check_email_exist',
+								data: {
+									email:this.email
+								},
+								success: res => {
+									this.$wanlshop.to(`email?email=${this.email}&url=${this.pageroute}`,'none');
+								},
+								fail: res => {
+									uni.showModal({
+										title: this.$t('gg.msg19'),
+										content: this.$t('login.msg11'),
+										success: (res) => {
+											if (res.confirm) {
+												this.$wanlshop.to(`register?mobile=${this.phoneRegion + this.account}&url=${this.pageroute}`);
+											} else if (res.cancel) {
+												console.log('取消');
+											}
+										}
+									});
+								}
+							});
+						}else
+						{
 						this.$api.get({
 							url: '/wanlshop/validate/check_mobile_exist',
 							data: {
@@ -340,6 +413,7 @@
 								});
 							}
 						});
+						}
 					} else {
 						if (formData.account) {
 							this.$wanlshop.to(`name?name=${formData.account}&url=${this.pageroute}`,'none');

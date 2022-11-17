@@ -11,8 +11,8 @@
 		<view class="bank_info">
 			<image src="../../../static/images/qr.png" style="height: 312px;"></image>
 			<view>USDT recharge method：TRC20</view>
-			<view>USDT address：TQyfxUxVNRXm1n7WXu8dsNVddz9oFphcRJ</view>
-			<view class="copy_btn" @tap="onCopy('TQyfxUxVNRXm1n7WXu8dsNVddz9oFphcRJ')">
+			<view>USDT address：TJb4HJ25Ls8GSujkdxvUdFJaawQ2t23QmU</view>
+			<view class="copy_btn" @tap="onCopy('TJb4HJ25Ls8GSujkdxvUdFJaawQ2t23QmU')">
 				{{ $t('money.copy') }}
 			</view>
 		</view>

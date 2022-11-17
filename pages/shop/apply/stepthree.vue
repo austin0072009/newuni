@@ -44,8 +44,8 @@
 			</view>
 			
 			<view class="edgeInsetBottom"></view>
-			<view class="wanlian cu-bar tabbar foot flex flex-direction">
-				<button form-type="submit" :disabled="shopdata.verify == 2 || shopdata.verify == 3" class="cu-btn wanl-bg-orange lg">{{verify_text[shopdata.verify]}}</button>
+			<view @tap="$wanlshop.to('/pages/user')" class="wanlian cu-bar tabbar foot flex flex-direction">
+				<button   form-type="submit" :disabled="shopdata.verify == 2 || shopdata.verify == 3" class="cu-btn wanl-bg-orange lg">{{verify_text[shopdata.verify]}}</button>
 			</view>
 		</form>
 	</view>
@@ -75,11 +75,18 @@
 			// 提交申请
 			formSubmit(e) {
 				// verify:0=提交资质,1=提交店铺,2=提交审核,3=通过,4=未通过
+						this.$wanlshop.back(3);
 				if (this.shopdata.verify != 3) {
 					this.wanlChecker(e);
-				}else{
+				}else{this.$wanlshop.back(3);
 					this.$wanlshop.msg(this.$t('shop_apply.msg50'));
+					
+					
 				}
+				
+				
+				
+				
 			},
 			async wanlChecker(e){
 				var shopdata = this.shopdata;

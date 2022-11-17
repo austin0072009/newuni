@@ -23,9 +23,9 @@
 						<view class="input" v-else>
 							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="32" confirm-type="next" @input="onKeyInput" v-model="email"></input>
 						</view>
-						<!-- <view class="uni-form-item uni-column input"> -->
-							<!-- <input :password="showPassword" :placeholder="$t('login.msg16')" class="uni-input" password type="text"/> -->
-							<!-- <input class="uni-input" type="idcard" placeholder="身份证输入键盘" /> -->
+					<!-- 	<view class="uni-form-item uni-column input">
+							<input :password="showPassword" :placeholder="$t('login.msg16')" class="uni-input" password type="text"/> -->
+					<!-- 		<input class="uni-input" type="idcard" placeholder="身份证输入键盘" /> -->
 							<!-- <input 
 								 type="text" 
 								 :password="showPassword" 
@@ -33,11 +33,11 @@
 								 v-model="password" 
 								 maxlength=12 
 								 class="iptPasswd"
-								/> -->
-								<!-- <view @tap="showPwd">
+								/>
+								<view @tap="showPwd">
 									  show
 								    </view> -->
-						<!-- </view> -->
+				<!-- 		</view> -->
 						<view class="auth-button flex flex-direction">
 							<button form-type="submit" class="cu-btn sl radius-bock bg-orange" :disabled="submitDisabled">{{$t('login.msg3')}}</button>
 							<!-- #ifdef MP-WEIXIN -->

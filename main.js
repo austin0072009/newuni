@@ -728,7 +728,8 @@ Vue.prototype.orderDetails = function(order_id) {to(`/pages/user/order/details?i
 
 // 全局店铺链接
 Vue.prototype.onShop = function(id) {
-	to(`/pages/shop/index?id=${id}`)
+	// to(`/pages/shop/index?id=${id}`)
+	to(`/pages/shop/product/list?shop_id=${id}`)
 }
 
 // 全局店铺链接

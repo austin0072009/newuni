@@ -136,7 +136,8 @@ export default {
 				order: 'asc',
 				page: 1,
 				filter: {},
-				op: {}
+				op: {},
+				shop_id:''
 			},
 			likeData: [],
 			drawerType: {
@@ -204,6 +205,7 @@ export default {
 		};
 	},
 	onLoad(option) {
+		this.loadData(option.id);
 		if (option.type) {
 			this.goodsType = option.type;
 		}
@@ -241,6 +243,7 @@ export default {
 			}
 		});
 		this.loadData();
+		this.params.shop_id= option.shop_id;
 		if (this.goodsData.length == 0) {
 			this.loadlikeData();
 		}
@@ -285,6 +288,7 @@ export default {
 	methods: {
 		//异步加载商品列表
 		async loadData() {
+			
 			this.params.type = this.goodsType;
 			this.$api.get({
 				url: '/wanlshop/product/lists',

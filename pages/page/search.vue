@@ -205,7 +205,8 @@ export default {
 		categoryToList(category_id, category_name,shop_id) {
 			if(category_name == null)
 			{
-				this.$wanlshop.to(`/pages/shop/index?id=${shop_id}`);
+			//	this.$wanlshop.to(`/pages/shop/index?id=${shop_id}`);
+			this.$wanlshop.to(`/pages/shop/product/list?shop_id=${shop_id}`)
 				return
 			}
 			this.setHistory(category_name);

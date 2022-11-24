@@ -346,6 +346,7 @@ import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
+			timer: null,
 			headerOpacity: 0,
 			// 上拉刷新
 			reload: true,
@@ -374,6 +375,32 @@ export default {
 				backgroundColor: this.$store.state.common.appStyle.user_nav_color
 		    })  
 		}, 200);
+		
+		this.timer = setInterval( () => {
+			
+			this.$api.get({
+				url: '/wanlshop/shop/getUserShopInfo',
+				success: res => {
+					if (res) {
+						this.shopdata = res;
+						if(this.timer) {
+							clearTimeout(this.timer);  
+							this.timer = null;  
+						}  
+					}else{
+						this.shopdata = {};
+					}
+				}
+			});
+			console.log("11111");
+		    // 这里添加您的逻辑		
+		}, 1000);
+	},
+	onHide() {
+		if(this.timer) {  
+			clearTimeout(this.timer);  
+			this.timer = null;  
+		}  
 	},
 	onLoad() {
 		//设置tabbar栏语言
@@ -381,8 +408,11 @@ export default {
 		if (this.$store.state.user.isLogin) {
 			this.loadData();
 			this.getShopInfo();
+			
 		}
 		this.loadlikeData();
+		
+		
 	},
 	onPageScroll(e) {
 		let tmpY = 50;
@@ -403,6 +433,7 @@ export default {
 	methods: {
 		//获取商家信息
 		async getShopInfo() {
+			
 			this.$api.get({
 				url: '/wanlshop/shop/getUserShopInfo',
 				success: res => {

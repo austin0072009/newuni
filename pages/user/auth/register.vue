@@ -72,7 +72,7 @@ export default {
 			check:1,
 			checked: 0,
 			phone: true,
-			phoneRegion: '86',
+			phoneRegion: '+86',
 			    array: ['CN +86', 'US +1', 'MY +60', 'ID +62', 'PH +63', 'SG +65 ','TH +66',  'BN +673','TW +886', 'MM +95'],
 			            index: 0,
 		};

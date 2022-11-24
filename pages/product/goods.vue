@@ -114,10 +114,10 @@
 					<text class="wlIcon-weizhi margin-right-xs"></text>
 					{{ goodsData.shop.city ? goodsData.shop.city.split('/')[1] : $t('good.msg8') }}
 				</view>
-				<view class="wanl-gray">
+				<!-- <view class="wanl-gray">
 					{{$t('money.courier_fees')}}：
 					<text class="text-price">{{ goodsData.freight.price }}</text>
-				</view>
+				</view> -->
 				<view class="wanl-gray">
 					{{$t('good.msg9')}}
 					<text class="margin-left-xs">{{ goodsData.sales }}</text>
@@ -226,49 +226,7 @@
 			</view>
 		</view>
 		<!-- 评论 -->
-		<view class="comment margin-bottom-bj padding-bj bg-white" id="evaluate">
-			<view class="head" @tap="onTag('')">
-				<view>{{$t('good.msg18')}}({{ goodsData.comment }})</view>
-				<view class="wanl-gray wanl-orange">
-					{{ goodsData.comment > 0 ? parseInt((goodsData.praise / goodsData.comment) * 100) : 0 }}%{{$t('good.msg19')}}
-					<text class="wlIcon-fanhui2 margin-left-xs"></text>
-				</view>
-			</view>
-			<!-- 标签 -->
-			<view class="label margin-bottom padding-bottom solid-bottom">
-				<view @tap="onTag('good')" class="cu-tag round">{{$t('good.msg20')}} ({{ goodsData.praise }})</view>
-				<view @tap="onTag('pertinent')" class="cu-tag round">{{$t('good.msg21')}} ({{ goodsData.moderate }})</view>
-				<view @tap="onTag('poor')" class="cu-tag round">{{$t('good.msg22')}} ({{ goodsData.negative }})</view>
-				<view @tap="onTag('figure')" class="cu-tag round">{{$t('good.msg23')}} ({{ goodsData.comment_list.figure }})</view>
-				<view @tap="onTag(index)" v-for="(item, index) in goodsData.comment_list.tag" :key="index" class="cu-tag round">{{ index }} ({{ item }})</view>
-			</view>
-			<!-- 获取一个评论 -->
-			<view class="user" v-for="(item, index) in goodsData.comment_list.data" :key="item.id"  @tap="onTag('')">
-				<view class="userinfo">
-					<view class="avatar">
-						<view class="cu-avatar sm round margin-right-xs" :style="{ backgroundImage: 'url(' + $wanlshop.oss(item.user.avatar, 26, 26, 2, 'avatar') + ')' }"></view>
-						<view class="text-sm wanl-gray">{{ item.user.nickname }}</view>
-					</view>
-					<wanl-rate :current="item.score" :disabled="true"></wanl-rate>
-				</view>
-			
-				<view class="details text-min">
-					<view class="margin-bottom-sm">{{ item.content }}</view>
-					<view class="wanl-gray">{{$t('good.msg24')}}：{{ item.suk }}</view>
-				</view>
-				<view class="grid flex-sub grid-square" :class="[item.images.length > 3 ? 'col-3' : 'col-' + item.images.length]" v-if="item.images.length != 0">
-					<view
-						class="bg-img"
-						v-for="(image, index) in item.images"
-						:key="index"
-						v-if="index <= 3"
-						:style="{ backgroundImage: 'url(' + $wanlshop.oss(image, 88, 88) + ')' }"
-					></view>
-				</view>
-			</view>
-			<!-- 查看更多 -->
-			<view class="more" @tap="onTag('')"><text class="wanl-gray text-sm">{{$t('good.msg25')}}</text><text class="wlIcon-fanhui4 margin-left-xs"></text></view>
-		</view>
+		
 		<!-- 店铺 -->
 		<view class="shop padding-bj solid-bottom bg-white">
 			<view class="shopinfo margin-bottom">
@@ -280,11 +238,11 @@
 				<view class="bnt">
 					<!-- 1.0.9升级 -->
 					<button class="cu-btn round line-orange margin-right-sm" @tap="onShopGoods(goodsData.shop_id)">{{$t('good.msg27')}}</button>
-					<button class="cu-btn round bg-gradual-orange" @tap="onShop(goodsData.shop_id)">{{$t('good.msg28')}}</button>
+					<button class="cu-btn round bg-gradual-orange" @tap="onShopGoods(goodsData.shop_id)">{{$t('good.msg28')}}</button>
 				</view>
 			</view>
 
-			<view class="quality wanl-gray text-min">
+			<!-- <view class="quality wanl-gray text-min">
 				<view>
 					{{$t('good.msg29')}}
 					<text class="">{{ goodsData.shop.score_describe }}</text>
@@ -303,7 +261,7 @@
 					<view v-if="goodsData.shop.score_logistics < 4.7" class="cu-tag round di">{{$t('good.msg30')}}</view>
 					<view v-else class="cu-tag round gao">{{$t('good.msg31')}}</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 		<!-- 店铺推荐 -->
 		<view class="shop-recom padding-bj bg-white">
@@ -316,7 +274,7 @@
 				</view>
 			</view>
 			<view class="recommend margin-bottom-xs">
-				<view class="item" v-for="(item, index) in goodsData.shop_recommend" :key="item.id" @tap="onGoods(item.id)">
+				<view class="item" v-for="(item, index) in goodsData.shop_recommend" :key="item.id" @tap="onShopGoods(item.id)">
 					<image :src="$wanlshop.oss(item.image, 125, 120)" mode="aspectFill"></image>
 					<view class="text-sm margin-tb-xs text-cut">{{ item.title }}</view>
 					<view class="text-price wanl-orange text-df">{{ item.price }}</view>

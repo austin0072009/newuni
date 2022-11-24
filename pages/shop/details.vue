@@ -34,22 +34,22 @@
 					</view>
 				</view>
 				<view class="upgrade-shop-info-bottom">
-					<view>
+					<!-- <view>
 						<text class="info-tit">
 							<span>{{$t('other.msg8')}}：</span>
 						</text>
 						<text class="info-num">
 							<span>{{statistics.totalorder}}</span>
 						</text>
-					</view>
-					<view>
+					</view> -->
+					<!-- <view>
 						<text class="info-tit">
 							<span>{{$t('other.msg9')}}：</span>
 						</text>
 						<text class="info-num">
 							<span>${{statistics.totalorderamount}}</span>
 						</text>
-					</view>
+					</view> -->
 				</view>
 			</view>
 			<view class="upgrade-shop-list shop-info-item">

@@ -149,7 +149,7 @@
 			this.pageview = (Math.floor(Math.random() * (1000 - 0 + 1)) + 0) + (Math.floor(Math.random() * (100 - 0 + 1)) + 0);
 			console.log("shopID is " + option.shop_id);
 			this.shop_id = option.shop_id;
-			this.loadData();
+			
 			if(option.category_id){
 				this.params.filter.shop_category_id = option.category_id;
 				this.params.op.shop_category_id = 'FIND_IN_SET'; //1.0.2升级
@@ -172,6 +172,8 @@
 					this.empty = this.$t('shop.msg27');
 				}
 			}
+			
+			console.log("sousuo canshu:",this.params);
 		},
 		// 监听上拉
 		onPullDownRefresh() {

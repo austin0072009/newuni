@@ -83,8 +83,8 @@
 				check:1,
 				account: '',
 				showPassword: false,
-				phoneRegion: '+86',
-				  array: ['CN +86', 'US +1', 'MY +60', 'ID +62', 'PH +63', 'SG +65 ','TH +66',  'BN +673','TW +886', 'MM +95'],
+				phoneRegion: 'CN+86',
+				  array: ['CN+86', 'US+1', 'MY+60', 'ID+62', 'PH+63', 'SG+65 ','TH+66',  'BN+673','TW+886', 'MM+95'],
 				            index: 0,
 			};
 		},
@@ -428,7 +428,13 @@
 						this.$wanlshop.msg(this.$t('login.msg13'));
 					}, 300)
 				}
-			},
+			
+			
+			
+
+			
+			}
+			,
 			getUrlCode() {
 				// 截取url中的code方法
 				var url = location.search;

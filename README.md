@@ -5,6 +5,6 @@ A frontend of an ecommerce system that developed by uniapp(Vue).
 
 https://www.live-shopee.com/h5/#/
 
-I copy the UI and style of the Shopee ecommerce, if you interested in this system contact me in TG @austinbaba or gmail: austinbaba@gmail.com
+if you interested in this system contact me in TG @austinbaba or gmail: austinbaba@gmail.com
 
 ![image](https://user-images.githubusercontent.com/46783484/204201354-d0d29715-1747-498e-80be-c8a19c9ab05a.png)

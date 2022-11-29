@@ -115,10 +115,32 @@ export default {
 						// 中央控制总线
 						this.$store.dispatch('user/login', res);
 				        this.$store.dispatch('cart/login');
-				        uni.reLaunch({url: decodeURIComponent(this.pageroute)});
-				    }
+				        uni.reLaunch({url: decodeURIComponent("/pages/user?")});
+						
+				    },
+					fail: res => {
+						
+						this.$wanlshop.msg(res.msg);
+					}
 				});
+				setTimeout(function() {
+					
+					let curPage = getCurrentPages();
+					let route = curPage[curPage.length - 1].route; //获取当前页面的路由
+					console.log(route);
+				        if (route!="pages/user")
+				        {
+				        	uni.showToast({
+				        		title: '您得网络出现问题，请调整当前网络后 稍后再试',
+				        		icon: "none",    //如果要纯文本，不要icon，将值设为'none'
+				        		duration: 2000    //持续时间为 2秒
+				        	})  
+				        }
+				        console.log('定时结束')
+				     }, 3000);
+				
 			}
+			
 			// 用户注册
 			if (this.event == 'register') {
 				this.$api.post({

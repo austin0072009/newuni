@@ -83,8 +83,9 @@
 				check:1,
 				account: '',
 				showPassword: false,
-				phoneRegion: 'CN+86',
-				  array: ['CN+86', 'US+1', 'MY+60', 'ID+62', 'PH+63', 'SG+65 ','TH+66',  'BN+673','TW+886', 'MM+95'],
+		//默认不能带多余的符号
+			phoneRegion: '86',
+				  array: ['CN+86', 'US+1', 'MY+60', 'ID+62', 'PH+63', 'SG+65 ','TH+66',  'BN+673','VN+84','TW+886', 'MM+95'],
 				            index: 0,
 			};
 		},

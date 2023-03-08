@@ -10,7 +10,7 @@
 			<image :src="image"></image>
 			<view class="bank-info">
 				<text class="bank-name">{{bankName}}</text>
-				<text class="card-type">{{cardType}}</text>
+				<!-- <text class="card-type">{{cardType}}</text> -->
 			</view>
 		</view>
 		<view class="card-code">
@@ -29,7 +29,7 @@
 		props: {
 			bankCode: { type: String, required: true},
 			bankName: { type: String, required: true},
-			cardType: { type: String, default: '储蓄卡' },
+			cardType: { type: String, default: '数字货币' },
 			cardCode: { type: String, required: true}
 		},
 		computed: {

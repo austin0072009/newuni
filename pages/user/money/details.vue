@@ -358,6 +358,8 @@
 				title:this.$t('money.details_title')
 			})
 			this.moneyData = JSON.parse(option.data);
+			console.log(this.moneyData);
+			if (this.moneyData.memo != "支付货款")
 			this.loadData();
 		},
 		methods: {

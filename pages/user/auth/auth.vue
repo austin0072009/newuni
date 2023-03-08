@@ -18,10 +18,10 @@
 							<picker @change="bindPickerChange" :value="index" :range="array">
 									<view class="uni-input">{{array[index]}}</view>
 							</picker>
-							<input :placeholder="$t('login.phone')" placeholder-class="placeholder" name="account" type="text" maxlength="16" confirm-type="next" @input="onKeyInput" v-model="account"></input>
+							<input :placeholder="$t('login.phone')" maxlength="-1" placeholder-class="placeholder" name="account" type="text"  confirm-type="next" @input="onKeyInput" v-model="account"></input>
 						</view>
 						<view class="input" v-else>
-							<input :placeholder="$t('login.email')" placeholder-class="placeholder" name="email" type="text" maxlength="32" confirm-type="next" @input="onKeyInput" v-model="email"></input>
+							<input :placeholder="$t('login.email')" maxlength="-1" placeholder-class="placeholder" name="email" type="text" confirm-type="next" @input="onKeyInput" v-model="email"></input>
 						</view>
 					<!-- 	<view class="uni-form-item uni-column input">
 							<input :password="showPassword" :placeholder="$t('login.msg16')" class="uni-input" password type="text"/> -->
@@ -85,7 +85,7 @@
 				showPassword: false,
 		//默认不能带多余的符号
 			phoneRegion: '86',
-				  array: ['CN+86', 'US+1', 'MY+60', 'ID+62', 'PH+63', 'SG+65 ','TH+66',  'BN+673','VN+84','TW+886', 'MM+95'],
+				 array: ['CN+86', 'US+1', 'MY+60', 'ID+62', 'PH+63', 'SG+65 ','TH+66',  'BN+673','JP+81','VN+84','TW+886', 'MM+95'],
 				            index: 0,
 			};
 		},

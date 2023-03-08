@@ -85,9 +85,9 @@
 								{{$t('other.msg22')}}:
 								<text class="pf-price">${{item.price}}</text>
 							</view>
-							<view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(2,item.id)">
+							<!-- <view style="width: 100%;text-align: center;padding: 0.2rem;background: red;color: #fff;border-radius: 0.2rem;font-size: 25rpx;" @tap="del(2,item.id)">
 								{{$t('other.msg45')}}
-							</view>
+							</view> -->
 						</view>
 						<!-- <uni-load-more v-if="phList.length != 0" :status="status2" :content-text="contentText" /> -->
 					</scroll-view>

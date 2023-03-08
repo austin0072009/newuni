@@ -7,7 +7,7 @@
 			</view>
 			<form @submit="formSubmit">
 				<view class="auth-group radius-bock bg-gray wlian-grey-light">
-					<input :placeholder="$t('login.msg48')" type="number" maxlength="11" confirm-type="next" placeholder-class="placeholder" name="mobile"
+					<input :placeholder="$t('login.msg48')" type="number" maxlength="-1" confirm-type="next" placeholder-class="placeholder" name="mobile"
 					 @input="onKeyInput"></input>
 				</view>
 				<view class="auth-button flex flex-direction">

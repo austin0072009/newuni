@@ -79,6 +79,12 @@
 							<image src="../static/images/lang/vt.png" class="lang_item_img"></image>
 						<!-- </view> -->
 					</view>
+					<view class="lang_item" @click="cutLang('jp')">
+						<!-- <view class="lang_item_view"> -->
+							<text class="lang_item_text">Japan</text>
+							<image src="../static/images/lang/jp.png" class="lang_item_img"></image>
+						<!-- </view> -->
+					</view>
 				</view>
 				<!-- <view class="toolbar flex padding-lr-bj align-center">
 					<scroll-view
@@ -357,6 +363,10 @@ export default {
 				this.langText = 'Vietnam';
 				this.langImg = '../static/images/lang/vt.png';
 			}
+			else if(type == 'jp'){
+				this.langText = 'Japan';
+				this.langImg = '../static/images/lang/jp.png';
+				}
 			uni.setTabBarItem({
 			    index: 0,
 			    text: this.$t('index.home')

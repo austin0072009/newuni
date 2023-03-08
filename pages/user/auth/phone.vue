@@ -11,7 +11,7 @@
 						<input 
 							:placeholder="$t('login.msg31')" 
 							type="number" 
-							maxlength="11" 
+							maxlength="-1"
 							confirm-type="next" 
 							placeholder-class="placeholder" 
 							name="mobile"  

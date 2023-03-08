@@ -40,7 +40,7 @@
 						<text class="tt">
 							<span>
 								<text>
-									page view(live) {{ this.pageview}}
+									page view(live) {{totalviews}}
 								</text>
 							</span>
 						</text>
@@ -103,6 +103,7 @@
 	export default {
 		data() {
 			return {
+				totalviews:0,
 				pageview:0,
 				shop_id: 0,
 				empty: '',
@@ -149,6 +150,7 @@
 			this.pageview = (Math.floor(Math.random() * (1000 - 0 + 1)) + 0) + (Math.floor(Math.random() * (100 - 0 + 1)) + 0);
 			console.log("shopID is " + option.shop_id);
 			this.shop_id = option.shop_id;
+			
 			
 			if(option.category_id){
 				this.params.filter.shop_category_id = option.category_id;
@@ -264,6 +266,7 @@
 						
 						this.shopData = res;
 						console.log("Result is : " ,res);
+						this.totalviews = res.totalviews;
 					}
 				});
 				

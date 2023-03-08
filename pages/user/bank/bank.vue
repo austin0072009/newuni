@@ -8,6 +8,29 @@
 					<text class="wlIcon-xuanze-danxuan" v-if="index == key"></text>
 					<text class="wlIcon-xuanze" v-else></text>
 				</view>
+				
+			<!-- 	<view class="bankCard">
+					
+					<view class="bankText">
+					<view class="bankName">
+						
+								{{item.bankCode}}  :	{{item.bankName}}
+					</view>
+			
+					<view>
+						
+						Address :		{{item.cardCode}}
+					</view>
+			
+			</view>
+			
+					<view class="choice text-xl" v-if="choice == 1">
+						<text class="wlIcon-xuanze-danxuan" v-if="index == key"></text>
+						<text class="wlIcon-xuanze" v-else></text>
+					</view>
+					
+					
+				</view> -->
 			</view>
 		</view>
 		<view v-if="bankList.length == 0">
@@ -48,8 +71,11 @@ export default {
 				url: '/wanlshop/pay/getPayAccount',
 				success: res => {
 					this.bankList = res;
+					console.log(res);
 				}
 			});
+			
+			
 		},
 		async refreshList(data) {
 			uni.showLoading({
@@ -87,10 +113,11 @@ export default {
 
 <style>
 .item {
-	position: relative;
+    position: relative;
+    background: #f8f8f8;
 }
 .item .choice {
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(0, 0, 0, 0.8);
 	position: absolute;
 	right: 20rpx;
 	top: 20rpx;
@@ -105,4 +132,22 @@ export default {
 	font-size: 32rpx;
 	height: 86rpx;
 }
+
+.bankCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+	height: 10vh;
+}
+
+.bankName{
+	font-size: 30px;
+}
+
+.bankText{
+		font-size: 20px;
+		padding-left: 20px;
+}
+
 </style>

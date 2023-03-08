@@ -7,7 +7,7 @@
 				<view class="content">
 					<text>{{bankData.bankName}}</text>
 					<view class="wanl-gray">
-						<text>{{$t('money.tail')}} {{getCode(bankData.cardCode)}} {{getType(bankData.cardType)}}</text>
+						<text>{{$t('money.tail')}} {{getCode(bankData.cardCode)}} </text>
 					</view>
 				</view>
 				<view class="action">

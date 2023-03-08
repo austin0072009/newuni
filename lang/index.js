@@ -7,6 +7,7 @@ import my from './my.js' // 英文包
 import phi from './phi.js' // 英文包
 import th from './th.js' // 英文包
 import vt from './vt.js' // 英文包
+import jp from './jp.js'
 
 
 Vue.use(VueI18n)// 完成全局注册
@@ -34,6 +35,9 @@ export default new VueI18n ({
 		},
 		vt: {
 			...vt
+		},
+		jp: {
+			...jp
 		}
 	}
 })

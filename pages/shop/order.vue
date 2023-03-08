@@ -238,6 +238,7 @@ export default {
 					});
 					//loaded新字段用于表示数据加载完毕，如果为空可以显示空白页
 					this.$set(navItem, 'loaded', true);
+					console.log(orderList);
 				}
 			});
 		},

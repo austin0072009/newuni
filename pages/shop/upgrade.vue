@@ -149,9 +149,10 @@
 		}
 	}
 	.upgrade-shop .upgrade-shop-info{
-		height: 150px;
-		    background-size: 100% 100%;
-		    padding: 10px 20px;
+    height: 150px;
+    background-size: 100% 100%;
+    padding: 10px 20px;
+    background: #f06408;
 	}
 	.upgrade-shop .upgrade-shop-info .upgrade-shop-info-top{
 		    display: flex;

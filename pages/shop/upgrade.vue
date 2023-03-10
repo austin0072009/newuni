@@ -52,28 +52,28 @@
 					</view>
 				</view>
 			</view>
-			<view style="margin: 0.5rem;">
-				<view style="width: 100%;position:relative;pointer-events: none;" v-for="(item, index) in statistics.level_list" :style="{position:(index>0)?'relative':'',top:(index>0)?(index * -3.5)+'rem':''}">
+			<view style="margin: 0.5rem;background-color: lightgray">
+				<view style="width: 100%;position:relative;pointer-events: none; background-color: darkorange; " v-for="(item, index) in statistics.level_list" :style="{position:(index>0)?'relative':'',top:(index>0)?(index * -3.5)+'rem':''}">
 					<view class="headeruser-image">
 						<image mode='widthFix' :src="$wanlshop.oss(item.bg_image, 400, 0)"></image>
 					</view>
-					<view style="position: relative;top: -4.5rem;width: 30%;text-align: center;float: left;">
+					<view style="position: relative;top: -6.5rem;width: 30%;text-align: center;float: left;">
 						<view>
 							<text class="wlIcon-guanfang" style="font-size: 2rem; line-height: 2rem;font-weight: normal; top: 0px;" :style="{ color: item.color }"></text>
 						</view>
 						<text>{{item.title}}</text>
 					</view>
-					<view class="v1" style="position: relative;top: -5rem;width: 25%;text-align: left;float: left;">
+					<view class="v1" style="position: relative;top: -7rem;width: 25%;text-align: left;float: left;">
 						<text>{{$t('other.msg27')}}：{{item.number1}}</text>
 						<text>{{$t('other.msg28')}}：{{item.number2}}</text>
 						<text>{{$t('other.msg29')}}：{{item.money}}%</text>
 					</view>
-					<view class="v1" style="position: relative;top: -5rem;width: 25%;text-align: left;float: left;">
+					<view class="v1" style="position: relative;top: -7rem;width: 25%;text-align: left;float: left;">
 						<text>{{item.note1}}</text>
 						<text>{{item.note2}}</text>
 						<text>{{item.note3}}</text>
 					</view>
-					<view class="vip-buy" style="position: relative;top: -4.5rem;width: 3rem;text-align: center;float: left;height: 3rem;line-height: 3rem;pointer-events: auto;" @tap="upgrade(item)">
+					<view class="vip-buy" style="position: relative;top: -6.5rem;width: 3rem;text-align: center;float: left;height: 3rem;line-height: 3rem;pointer-events: auto;" @tap="upgrade(item)">
 						{{$t('other.msg30')}}
 					</view>
 				</view>
@@ -190,6 +190,18 @@
 	    flex-direction: column;
 	    justify-content: space-around;
 	}
+	
+	.upgrade-shop-inf0-right {
+	    position: absolute;
+	    right: 72px;
+	    height: 50px;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-around;
+		background-color: #f00000;
+	}
+	
+	
 	.u-fade-enter-active, .u-fade-leave-active{
 	    transition-property: opacity;
 	}

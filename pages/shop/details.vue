@@ -2,7 +2,7 @@
 	<view class="wanlshop-info-container">
 		<view class="edgeInsetTop"></view>
 		<view class="upgrade-shop">
-			<view class="upgrade-shop-info" style="background-image: url(&quot;https://shop.amartt.xyz/assets/addons/wanlshop/img/show/main_bg3x.png&quot;);">
+			<view class="upgrade-shop-info" style="background-image: url(&quot;https://shop.amartt.xyz/assets/addons/wanlshop/img/show/main_bg3x.png&quot;); background-color: #ff6608;">
 				<view class="upgrade-shop-info-top">
 					<view class="u-avatar u-avatar--circle" style="background-color: transparent; width: 60px; height: 60px;">
 						<image class="u-avatar__image u-avatar__image--circle" style="width: 60px; height: 60px;" :src="$wanlshop.oss(statistics.avatar, 400, 0)"></image>

@@ -3,7 +3,6 @@
 A frontend of an ecommerce system that developed by uniapp(Vue).
 (backend base on php thinkphp fastadmin framework, mysql 5.7 , im protocol websocket).
 
-https://www.live-shopee.com/h5/#/
 
 if you interested in this system contact me in TG @austinbaba or gmail: austinbaba@gmail.com
 
